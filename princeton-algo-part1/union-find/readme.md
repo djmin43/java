@@ -1,0 +1,21 @@
+This is lecture notes for 'Union-Find' 
+
+
+#### Dynamic Connectivity
+
+Steps to developing a usable algorithm
+* model the problem
+* find an algorithm to solve
+* fast enough?
+* if not, figure out why
+* find a way to address the problem
+* iterate until satisfied
+
+union command: connect two objects (ex: connected(0, 7))
+find/connected query: is there a path connecting the two objects?(ex: union(5, 0))
+
+Modeling the connections
+* reflexive: p is connected to p
+* symmetric: if p is connected to q, then q is connected to p
+* transitive: if p is connected to q and q is connected to r, then p is connected to r
+
