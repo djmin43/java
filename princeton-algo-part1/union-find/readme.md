@@ -23,4 +23,12 @@ Connected components:
 * Maximal set of objects that are mutually connected.
 { 0 } { 1 4 5 } { 2 3 6 7 }
  
-### Quick Find
+### Quick Find (eager approach)
+
+- data structure:
+  - integer array id[] of size N
+  - interpretation: p and q are connected iff (if and only if) they have the same id
+- 
+
+
+ 
