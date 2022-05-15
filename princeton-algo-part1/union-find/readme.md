@@ -28,6 +28,11 @@ Connected components:
 - data structure:
   - integer array id[] of size N
   - interpretation: p and q are connected iff (if and only if) they have the same id
+
+
+### Quick Union (lazy approach)
+
+- quick find is too slow because it has to check all element items
 - 
 
 
