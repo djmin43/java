@@ -36,9 +36,12 @@ Connected components:
 
 ### How to improve
 
-## weighting
-
+#### weighting
+weighted quick-union
 - modify quick-union to avoid tall trees
 - keep track of size of each tree(number of objects)
 - balance by linking root of smaller tree to root of larger tree
  
+#### path compression
+
+- just after computing the root of p, set the id of each examined node to point to that root.
