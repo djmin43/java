@@ -34,5 +34,11 @@ Connected components:
 
 - quick find is too slow because it has to check all element items
 
+### How to improve
 
+## weighting
+
+- modify quick-union to avoid tall trees
+- keep track of size of each tree(number of objects)
+- balance by linking root of smaller tree to root of larger tree
  
