@@ -45,3 +45,18 @@ weighted quick-union
 #### path compression
 
 - just after computing the root of p, set the id of each examined node to point to that root.
+
+### Union Find Applications
+
+- precolation
+- games
+- dynamic connectivity
+
+#### percolation
+- a model for many physical systems
+  - N * N of sites
+  - each site is open with probability of p
+  - system percolates iff top and bottom are connected by open sites
+  - going from top to bottom open or not
+  - examples: electricity, fluid flow, social interaction  
+- Monte Carlo simulation
