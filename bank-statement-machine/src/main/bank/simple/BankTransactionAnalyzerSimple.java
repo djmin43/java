@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -19,8 +20,10 @@ public class BankTransactionAnalyzerSimple {
        for (final String line: lines) {
            final String[] columns = line.split(",");
            final LocalDate date = LocalDate.parse(columns[0], DATE_PATTERN);
-           final double amount = Double.parseDouble(columns[1]);
-           total += amount;
+           if (date.getMonth() == Month.JANUARY) {
+               final double amount = Double.parseDouble(columns[1]);
+               total += amount;
+           }
        }
 
        System.out.println("The total for all transactions is " + total);
