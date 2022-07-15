@@ -4,10 +4,8 @@ package com.mindongjoon;
 import java.util.Scanner;
 
 public class Main {
-    public static void main (String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Name: ");
-        String name = scanner.nextLine().trim();
-        System.out.println("you are " + name);
+    public static void main(String[] args) {
+        System.out.println("hello world");
+        System.out.println(Animal.numberOfEars);
     }
 }
