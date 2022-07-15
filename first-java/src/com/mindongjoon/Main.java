@@ -5,9 +5,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hello world");
-        System.out.println(Animal.numberOfEars);
-        Animal dog = new Animal();
-        dog.growl();
+        Employee jay = new Employee("jay");
+        jay.setAge(500);
+        jay.setSalary(100);
+        jay.setYearsOfExperience(100);
+        jay.getSalary();
+        jay.doubleSalary();
+        jay.getSalary();
+        jay.doubleSalary();
+        jay.getSalary();
+        jay.getYearsOrExperience();
+        jay.getAge();
     }
 }
