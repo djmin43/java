@@ -25,7 +25,6 @@ public class BankTransactionAnalyzerSimple {
                total += amount;
            }
        }
-
        System.out.println("The total for all transactions is " + total);
 
     }
