@@ -1,9 +1,7 @@
 package com.bans.args;
 
 public class ArrayStructures {
-
     private final int[] theArray = new int[50];
-
     private int arraySize = 10;
 
     public void generateRandomArray() {
@@ -23,7 +21,6 @@ public class ArrayStructures {
 
     public int getValueAtIndex(int index) {
         if (index < arraySize) return this.theArray[index];
-
         return 0;
     }
 
@@ -53,36 +50,26 @@ public class ArrayStructures {
         }
     }
 
-    public void linearSearchForValue(int value){
-
+    public void linearSearchForValue(int value) {
         boolean valueInArray = false;
-
         String indexesWithValue = "";
-
-        for (int i = 0; i < arraySize; i++){
+        for (int i = 0; i < arraySize; i++) {
             if (theArray[i] == value) {
                 valueInArray = true;
                 indexesWithValue += i + "";
             }
         }
-
-        if(!valueInArray){
+        if (!valueInArray) {
             indexesWithValue = "none";
         }
         System.out.println(indexesWithValue);
     }
 
     public static void main(String[] args) {
-
         ArrayStructures newArray = new ArrayStructures();
-
         newArray.generateRandomArray();
         newArray.printArray();
-
-        newArray.deleteIndex(4);
-
         newArray.insertValue(199);
-
         newArray.linearSearchForValue(11);
     }
 }
