@@ -6,7 +6,7 @@ public class ArrayStructures {
 
     private final int[] theArray = new int[50];
 
-    private final int arraySize = 10;
+    private int arraySize = 10;
 
     public void generateRandomArray() {
         for (int i = 0; i < arraySize; i++) {
@@ -39,6 +39,17 @@ public class ArrayStructures {
         return valueInArray;
     }
 
+    public void deleteIndex(int index) {
+        if (index < arraySize){
+            for (int i = index; i < (arraySize -1); i ++) {
+                theArray[i] = theArray[i+1];
+            }
+            arraySize--;
+        }
+    }
+
+
+
     public static void main(String[] args) {
 
         ArrayStructures newArray = new ArrayStructures();
@@ -52,5 +63,8 @@ public class ArrayStructures {
         boolean isValueIncluded = newArray.doesArrayContainThisValue(10);
         System.out.println(isValueIncluded);
 
+        newArray.deleteIndex(4);
+
+        newArray.printArray();
     }
 }
