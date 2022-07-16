@@ -54,11 +54,22 @@ public class ArrayStructures {
     }
 
     public void linearSearchForValue(int value){
+
+        boolean valueInArray = false;
+
+        String indexesWithValue = "";
+
         for (int i = 0; i < arraySize; i++){
             if (theArray[i] == value) {
-                System.out.println(i);
+                valueInArray = true;
+                indexesWithValue += i + "";
             }
         }
+
+        if(!valueInArray){
+            indexesWithValue = "none";
+        }
+        System.out.println(indexesWithValue);
     }
 
     public static void main(String[] args) {
