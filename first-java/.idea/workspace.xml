@@ -39,9 +39,9 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Arrays">
-    <configuration name="Arrays" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.bans.args.Arrays" />
+  <component name="RunManager" selected="Application.ArrayStructures">
+    <configuration name="ArrayStructures" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bans.args.ArrayStructures" />
       <module name="first-java" />
       <extension name="coverage">
         <pattern>
@@ -56,6 +56,19 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="first-java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.bans.args.Arrays" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bans.args.Arrays" />
+      <module name="first-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bans.args.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -75,7 +88,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Arrays" />
+        <item itemvalue="Application.ArrayStructures" />
+        <item itemvalue="Application.com.bans.args.Arrays" />
         <item itemvalue="Application.com.mindongjoon.Main" />
         <item itemvalue="Application.Main" />
       </list>
@@ -89,7 +103,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651919156928</updated>
-      <workItem from="1657886879556" duration="4686000" />
+      <workItem from="1657886879556" duration="5831000" />
     </task>
     <servers />
   </component>
