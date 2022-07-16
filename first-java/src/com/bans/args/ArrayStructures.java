@@ -21,11 +21,21 @@ public class ArrayStructures {
         }
     }
 
+    public int getValueAtIndex (int index) {
+        if (index < arraySize) return this.theArray[index];
+
+        return 0;
+    }
+
     public static void main(String[] args) {
+
         ArrayStructures newArray = new ArrayStructures();
 
         newArray.generateRandomArray();
         newArray.printArray();
+
+        int value = newArray.getValueAtIndex(5);
+        System.out.println(value);
 
     }
 }
