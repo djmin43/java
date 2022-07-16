@@ -1,7 +1,5 @@
 package com.bans.args;
 
-import java.util.Arrays;
-
 public class ArrayStructures {
 
     private final int[] theArray = new int[50];
@@ -31,7 +29,7 @@ public class ArrayStructures {
 
     public boolean doesArrayContainThisValue(int value) {
         boolean valueInArray = false;
-        for (int i = 0; i < arraySize; i ++) {
+        for (int i = 0; i < arraySize; i++) {
             if (theArray[i] == value) {
                 valueInArray = true;
             }
@@ -40,15 +38,28 @@ public class ArrayStructures {
     }
 
     public void deleteIndex(int index) {
-        if (index < arraySize){
-            for (int i = index; i < (arraySize -1); i ++) {
-                theArray[i] = theArray[i+1];
+        if (index < arraySize) {
+            for (int i = index; i < (arraySize - 1); i++) {
+                theArray[i] = theArray[i + 1];
             }
             arraySize--;
         }
     }
 
+    public void insertValue(int value) {
+        if (arraySize < 50) {
+            theArray[arraySize] = value;
+            arraySize++;
+        }
+    }
 
+    public void linearSearchForValue(int value){
+        for (int i = 0; i < arraySize; i++){
+            if (theArray[i] == value) {
+                System.out.println(i);
+            }
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -57,14 +68,10 @@ public class ArrayStructures {
         newArray.generateRandomArray();
         newArray.printArray();
 
-        int value = newArray.getValueAtIndex(5);
-        System.out.println(value);
-
-        boolean isValueIncluded = newArray.doesArrayContainThisValue(10);
-        System.out.println(isValueIncluded);
-
         newArray.deleteIndex(4);
 
-        newArray.printArray();
+        newArray.insertValue(199);
+
+        newArray.linearSearchForValue(11);
     }
 }
