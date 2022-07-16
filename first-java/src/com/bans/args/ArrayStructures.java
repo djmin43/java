@@ -1,5 +1,7 @@
 package com.bans.args;
 
+import java.util.Arrays;
+
 public class ArrayStructures {
 
     private final int[] theArray = new int[50];
@@ -21,10 +23,20 @@ public class ArrayStructures {
         }
     }
 
-    public int getValueAtIndex (int index) {
+    public int getValueAtIndex(int index) {
         if (index < arraySize) return this.theArray[index];
 
         return 0;
+    }
+
+    public boolean doesArrayContainThisValue(int value) {
+        boolean valueInArray = false;
+        for (int i = 0; i < arraySize; i ++) {
+            if (theArray[i] == value) {
+                valueInArray = true;
+            }
+        }
+        return valueInArray;
     }
 
     public static void main(String[] args) {
@@ -36,6 +48,9 @@ public class ArrayStructures {
 
         int value = newArray.getValueAtIndex(5);
         System.out.println(value);
+
+        boolean isValueIncluded = newArray.doesArrayContainThisValue(10);
+        System.out.println(isValueIncluded);
 
     }
 }
