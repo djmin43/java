@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8b2e6e9-1ebd-4d69-85e1-c8ba2a49e971" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/bans/args/TheStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/bans/args/ArrayStructures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bans/args/ArrayStructures.java" afterDir="false" />
     </list>
@@ -43,7 +43,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.ArrayStructures">
+  <component name="RunManager" selected="Application.TheStack">
     <configuration name="ArrayStructures" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bans.args.ArrayStructures" />
       <module name="first-java" />
@@ -60,6 +60,19 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="first-java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TheStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bans.args.TheStack" />
+      <module name="first-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bans.args.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -92,6 +105,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TheStack" />
         <item itemvalue="Application.ArrayStructures" />
         <item itemvalue="Application.com.bans.args.Arrays" />
         <item itemvalue="Application.com.mindongjoon.Main" />
@@ -108,7 +122,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651919156928</updated>
       <workItem from="1657886879556" duration="10997000" />
-      <workItem from="1657949145181" duration="94000" />
+      <workItem from="1657949145181" duration="2496000" />
     </task>
     <servers />
   </component>

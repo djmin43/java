@@ -68,8 +68,7 @@ public class ArrayStructures {
     public static void main(String[] args) {
         ArrayStructures newArray = new ArrayStructures();
         newArray.generateRandomArray();
-        newArray.printArray();
-        newArray.insertValue(199);
         newArray.linearSearchForValue(11);
+
     }
 }
