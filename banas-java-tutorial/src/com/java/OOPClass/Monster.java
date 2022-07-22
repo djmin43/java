@@ -36,7 +36,6 @@ public class Monster {
         if (health < 0) {
             alive = false;
         }
-
     }
 
 }
