@@ -1,6 +1,7 @@
 package com.java.OOPClass;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class JavaLessonEleven {
 
@@ -22,10 +23,28 @@ public class JavaLessonEleven {
         names.set(0, "Kobe Bryant");
 
         names.remove(3);
-        
 
-        for (int i = 0; i < names.size(); i++){
-            System.out.println(names.get(i));
+        System.out.println(names);
+
+        Iterator individualItems = names.iterator();
+
+        while (individualItems.hasNext()) {
+            System.out.println(individualItems.next());
+        }
+
+        ArrayList nameCopy = new ArrayList();
+        ArrayList nameBackup = new ArrayList();
+
+        nameCopy.addAll(names);
+        String paulYoung = "Paul Young";
+        names.add(paulYoung);
+
+        if (names.contains(paulYoung)) {
+            System.out.println("Paul is here");
+        }
+
+        if (names.containsAll(nameCopy)) {
+            System.out.println("everything in nameCopy is in names");
         }
 
 
