@@ -10,9 +10,17 @@ public class JavaLessonTwelve {
 
         names.add("jay");
         names.add("austin");
+        names.addLast("nathan");
+        names.addFirst("joshua");
+        names.add(0, "noah");
+        names.set(2, "paul");
+        names.remove(4);
+        names.remove("austin");
 
-        for (String name: names){
+
+        for (String name : names) {
             System.out.println(name);
         }
+        
     }
 }
