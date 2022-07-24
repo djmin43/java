@@ -9,6 +9,7 @@ public class JavaLessonFifteen {
 
         car.setCarStrength(10);
         System.out.println(car.getCarStrength());
+        System.out.println(car.carDrivable);
 
 
 
