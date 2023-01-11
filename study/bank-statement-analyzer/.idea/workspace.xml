@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a13f171-7caa-4dfc-ba9b-79ea5f1aedeb" name="Changes" comment="" />
+    <list default="true" id="6a13f171-7caa-4dfc-ba9b-79ea5f1aedeb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../bank-analyzer/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-analyzer/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-analyzer/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-analyzer/src/main/java/org/example/simple/BankTransactionAnalyzerSimple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bank-analyzer/src/main/resources/bank-transactions.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
