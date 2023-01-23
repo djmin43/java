@@ -9,9 +9,9 @@ public interface TodoItemRepository {
 
     TodoItem create(TodoItem todoItem);
 
-    TodoItem update(TodoItem todoItem);
+    TodoItem update(Long id, TodoItem todoItem);
 
-    TodoItem delete(TodoItem todoItem);
+    List<TodoItem> delete(Long id);
 
     Optional<TodoItem> findById(Long id);
 

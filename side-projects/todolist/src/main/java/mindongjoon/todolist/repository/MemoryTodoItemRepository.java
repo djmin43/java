@@ -1,51 +1,45 @@
 package mindongjoon.todolist.repository;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 import mindongjoon.todolist.domain.TodoItem;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
-@Getter
-@Setter
-@AllArgsConstructor
 public class MemoryTodoItemRepository implements TodoItemRepository {
-
 
     private static Map<Long, TodoItem> store = new HashMap<>();
     private static long sequence = 0L;
 
     @Override
     public TodoItem create(TodoItem todoItem) {
-        return null;
+        todoItem.setId(++sequence);
+        store.put(todoItem.getId(), todoItem);
+        return todoItem;
     }
 
     @Override
-    public TodoItem update(TodoItem todoItem) {
-        return null;
+    public TodoItem update(Long id, TodoItem todoItem) {
+        store.replace(id, store.get(id), todoItem);
+        return todoItem;
     }
 
     @Override
-    public TodoItem delete(TodoItem todoItem) {
-        return null;
+    public List<TodoItem> delete(Long id) {
+        store.remove(id);
+        return new ArrayList<>(store.values());
     }
 
     @Override
     public Optional<TodoItem> findById(Long id) {
-        return Optional.empty();
+        return Optional.ofNullable(store.get(id));
     }
 
     @Override
     public List<TodoItem> sortByIsFinished(Boolean isFinished) {
-        return null;
+        return new ArrayList<>((Collection<TodoItem>) store.values().stream().filter(item -> item.getIsFinished().equals(isFinished)));
     }
 
     @Override
     public List<TodoItem> getAllTodoItems() {
-        return null;
+        return new ArrayList<>(store.values());
     }
 }
