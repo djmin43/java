@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Copyright 2004-2022 H2 Group. Multiple-Licensed under the MPL 2.0,
+and the EPL 1.0 (https://h2database.com/html/license.html).
+Initial Developer: H2 Group
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head><meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+Change Log
+</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<!-- [search] { -->
+<script type="text/javascript" src="navigation.js"></script>
+</head><body onload="highlight()" onscroll="scroll()">
+
+<table class="nav" onmousemove="return mouseMove(event)"><tr class="nav"><td class="nav" valign="top">
+<div id = "searchMenu" style="width: 180px; overflow: hidden;">
+<div class="menu" style="white-space:nowrap;">
+<img src="images/h2-logo-2.png"
+    alt="H2 database logo"
+    onclick="document.location='main.html'"
+    width="136" height="74"/>
+&nbsp;&nbsp;<span id = "goTop" onclick="window.scrollTo(0,0)" style="color: #fff; position:fixed; font-size: 20px; cursor: pointer;">&#x25b2;</span>
+</div>
+
+<form action="submit" onsubmit="return goFirst();">
+<table width="100%" class="search">
+    <tr class="search">
+        <td class="search" colspan="2">
+<!-- translate
+<a href="https://translate.google.com/translate?u=https%3A%2F%2Fh2database.com"
+    onclick="javascript:startTranslate();return false;">Translate</a>
+<div id = "translate" style="display:none"><div id = "google_translate_element"></div></div>
+translate -->
+        </td>
+    </tr>
+    <tr class="search">
+        <td class="search" colspan="2">
+        <b><label for="search">Search:</label></b>
+        </td>
+    </tr>
+    <tr class="search">
+        <td class="search" colspan="2">
+            <input id = "search" name="search" type="text" size="16" maxlength="100" onkeyup="listWords(this.value, '')" /><br />
+            <input type="reset" id = "clear" style="display:none;" value="Clear" onclick="listWords('', '');" />
+        </td>
+    </tr>
+    <tr class="search" style="display:none;" >
+        <td class="search" style="width: 1%; vertical-align: middle;">
+            <input id = "highlight" type="checkbox" checked="checked" onclick="highlightCurrent(this.checked, search.value)" />
+        </td>
+        <td class="search" style="width: 99%; padding: 0px; vertical-align: middle;">
+            <label for="highlight">Highlight keyword(s)</label>
+        </td>
+    </tr>
+    <tr class="search">
+        <td class="search" colspan="2">
+            <table id = "result" style="border: 0px;">
+                <tr style="display:none"><td></td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>
+<div class="menu">
+<b><a href="main.html">Home</a></b><br />
+<a href="download.html">Download</a><br />
+<a href="cheatSheet.html">Cheat Sheet</a><br />
+<br />
+<b>Documentation</b><br />
+<a href="quickstart.html">Quickstart</a><br />
+<a href="installation.html">Installation</a><br />
+<a href="tutorial.html">Tutorial</a><br />
+<a href="features.html">Features</a><br />
+<a href="security.html">Security</a><br />
+<a href="performance.html">Performance</a><br />
+<a href="advanced.html">Advanced</a><br />
+<br />
+<b>Reference</b><br />
+<a href="commands.html">Commands</a><br />
+<a href="functions.html">Functions</a><br />
+&#8226;&nbsp;<a href="functions-aggregate.html">Aggregate</a>
+&#8226;&nbsp;<a href="functions-window.html">Window</a>
+<br /><br />
+<a href="datatypes.html">Data Types</a><br />
+<a href="grammar.html">SQL Grammar</a><br />
+<a href="systemtables.html">System Tables</a><br />
+<a href="../javadoc/index.html">Javadoc</a><br />
+<a href="https://github.com/h2database/h2database/releases/download/version-2.1.214/h2.pdf">PDF (2 MB)</a><br />
+<br />
+<b>Support</b><br />
+<a href="faq.html">FAQ</a><br />
+<a href="sourceError.html">Error Analyzer</a><br />
+<a href="https://groups.google.com/g/h2-database">Google Group</a><br />
+<br />
+<b>Appendix</b><br />
+<a href="history.html">History</a><br />
+<a href="license.html">License</a><br />
+<a href="build.html">Build</a><br />
+<a href="links.html">Links</a><br />
+<a href="mvstore.html">MVStore</a><br />
+<a href="architecture.html">Architecture</a><br />
+<a href="migration-to-v2.html">Migration to 2.0</a><br />
+<br />
+
+</div>
+</div>
+</td>
+
+<td class="nav" style="cursor: e-resize;" onmousedown="return mouseDown(event)" onmouseup="return mouseUp(event)">&nbsp;</td>
+<td class="nav"><div class="content">
+
+<!-- } -->
+
+<h1>Change Log</h1>
+
+<h2>Next Version (unreleased)</h2>
+<ul>
+    <li>Nothing yet</li>
+</ul>
+
+<h2>Version  2.1.214 (2022-06-13)</h2>
+<ul>
+<li><a href="https://github.com/h2database/h2database/issues/3538">Issue #3538</a>: In Postgres compatibility mode the NUMERIC type w/o scale should not default to 0
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3534">Issue #3534</a>: Subquery has incorrect empty parameters since 2.1.210 that breaks sameResultAsLast()
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3390">Issue #3390</a>: "ROW" cannot be set as a non keyword in 2.x
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3448">Issue #3448</a>: With linked table to postgreSQL, case-sensitive column names not respected in where part
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3434">Issue #3434</a>: JavaTableFunction is not closing underlying ResultSet when reading column list
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3468">Issue #3468</a>: Invalid DB format exception (for 1.x DB in 2.x h2) should have a specific SQLException vendorCode
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3528">Issue #3528</a>: Weird syntax error with HAVING clause in Oracle Mode
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3307">Issue #3307</a>: Fix SHUTDOWN DEFRAG for encrypted databases
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3515">Issue #3515</a>: Support for NEXTVAL property in DB2 mode
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3444">Issue #3444</a>: Conversion 'text' to 'integer' doesn't work anymore
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3493">Issue #3493</a>: org.h2.tools.DeleteDbFiles won't delete files under certain circumstances
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3486">Issue #3486</a>: FilePathDisk.newDirectoryStream() may fail on remote drive on Windows due to AccessDeniedException in Path.toRealPath()
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3484">Issue #3484</a>: LOB issue
+</li>
+</ul>
+
+<h2>Version  2.1.212 (2022-04-09)</h2>
+<ul>
+<li><a href="https://github.com/h2database/h2database/issues/3512">Issue #3512</a>: BITNOT(BIT_NAND_AGG(...) OVER ()) produces wrong result
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3510">Issue #3510</a>: PreparedStatement execution with java.io.tmpdir pointing to a directory symlink results in FileAlreadyExistsException
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3504">PR #3504</a>: Fix TypeInfo.getHigherGeometry() for types with and without SRID
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3481">PR #3481</a>: Add support for standard interval literals with precision
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3471">Issue #3471</a>: Possibility of corruption after SHUTDOWN DEFRAG
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3473">Issue #3473</a>: DROP TABLE/INDEX causes memory leak
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3464">PR #3464</a> / <a href="https://github.com/h2database/h2database/issues/3457">Issue #3457</a>: increase max length of VAR* types
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3460">PR #3460</a>: fix bug in readStoreHeader()
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3458">PR #3458</a>: Add performance tests for SQLite
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/1808">Issue #1808</a>: Occasional NPE in concurrent update of LOB
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3439">Issue #3439</a>: Cannot use enum values in JSON without explicit casts
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3426">Issue #3426</a>: Regression: BIT(1) is not accepted in MySQL compatibility mode
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3422">PR #3422</a>: Allow combination of any geometry types with the same SRID
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3414">Issue #3414</a>: H2 2.1.210: Query with Parameters throws NPE
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3413">Issue #3413</a>: Parser can&apos;t parse REFERENCES &hellip; NOT NULL
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3410">Issue #3410</a>: OOME with nested derived tables
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3405">Issue #3405</a>: Enhance SCRIPT to support operations on STDOUT
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3406">Issue #3406</a> / <a href="https://github.com/h2database/h2database/pull/3407">PR #3407</a>: FunctionMultiReturn.polar2CartesianArray result set iteration throws ClassCastException
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3400">Issue #3400</a>: Regression: ORDER BY ROWNUM fails with General error: "Unexpected code path"
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3387">Issue #3387</a>: SYSDATE behavior changed in 2.x
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3394">Issue #3394</a>: SYSDATE Considered Identifier when used in inner select
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3391">Issue #3391</a>: Hang on merge statement with data change delta table
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3384">PR #3384</a>: Remove abandoned Java to C converter and fix some warnings from Sonatype Lift
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3382">PR #3382</a>: Use secure parser in H2AuthConfigXml to avoid future reports
+</li>
+</ul>
+
+<h2>Version 2.1.210 (2022-01-17)</h2>
+<ul>
+<li><a href="https://github.com/h2database/h2database/pull/3381">PR #3381</a>: Add IDENTITY() and SCOPE_IDENTITY() to LEGACY mode
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3376">Issue #3376</a>: Data cannot be read after insert of clob data > MAX_LENGTH_INPLACE_LOB with data change delta table
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3377">PR #3377</a>: Add -webExternalNames setting and fix WebServer.getConnection()
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3367">PR #3367</a>: Use faster checks of dimension systems of geometries
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3369">PR #3369</a>: Added v2 changes in migration docs
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3361">Issue #3361</a>: MemoryEstimator.estimateMemory() can return negative size
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3362">PR #3362</a>: Use BufferedReader instead of BufferedInputStream to avoid Illegal seek exception
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3353">Issue #3353</a>: Wrong rownum() scope for DML with change delta table
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3352">PR #3352</a>: make Javadoc happier
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3344">Issue #3344</a>: Changelog could link to github issue
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3340">Issue #3340</a>: JDBC index type seems wrong
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3336">Issue #3336</a>: FT_INIT error when mode=MySQL
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3334">Issue #3334</a>: Regression with CREATE ALIAS - Parameter "#2" is not set
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3321">Issue #3321</a>: Insert Primary Key after import CSV Data does not work
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3323">PR #3323</a>: Tokenize SQL before parsing and preserve tokens for recompilation
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3320">PR #3320</a>: Add Servlet 5-compatible servlet for H2 Console
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/918">Issue #918</a>: Parser fails recognising set operations in correlated subqueries
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/2050">Issue #2050</a>: PostgreSQL with recursive fail with union in the final query
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3316">PR #3316</a>: Update copyright years
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3315">PR #3315</a>: Never put read locks into lockSharedSessions and other minor changes
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/492">Issue #492</a>: H2 does not correctly parse &lt;parenthesized joined table&gt;
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3311">Issue #3311</a>: Parser creates wrong join graph in some cases and uses wrong tables for column mapping
+</li>
+<li>FORCE_JOIN_ORDER setting is removed
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/1983">Issue #1983</a>: Official build script is not compatible with Java 13
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3305">PR #3305</a>: Add UNIQUE(VALUE) and remove some non-standard keywords
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3299">PR #3299</a>: Remove useless StringBuilder.toString() call
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3298">PR #3298</a>: Delete unused sqlTypes array
+</li>
+</ul>
+
+<h2>Version 2.0.206 (2022-01-04)</h2>
+<ul>
+<li><a href="https://github.com/h2database/h2database/issues/3322">Issue #3322</a>: Create linked table fails when the table contains a Geometry with a data type specified
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3297">Issue #3297</a>: Unexpected GROUP BY results with indexed IGNORECASE column
+</li>
+</ul>
+
+<h2>Version 2.0.204 (2021-12-21)</h2>
+<ul>
+<li><a href="https://github.com/h2database/h2database/issues/3291">Issue #3291</a>: Add Legacy and Strict modes
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3287">Issue #3287</a>: SELECT statement works on 1.4.200 but fails on 2.0.202 with "Column XYZ must be in the GROUP BY list"
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3284">PR #3284</a>: Remove unused UNDO_LOG setting
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3251">Issue #3251</a>: Table with GEOMETRY column can't have a TriggerAdapter-based trigger any more
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3281">PR #3281</a>: DateTimeFormatter-based FORMATDATETIME and PARSEDATETIME and other changes
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3246">Issue #3246</a>: Spatial predicates with comparison are broken in MySQL compatibility mode
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3270">Issue #3270</a>: org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "Unsafe comparison or cast"
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3268">Issue #3268</a> / <a href="https://github.com/h2database/h2database/pull/3275">PR #3275</a>: Add TO_DATE and TO_TIMESTAMP to PostgreSQL compatibility mode
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3274">PR #3274</a>: Remove some dead code and unused params
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3266">Issue #3266</a>: Oracle compatibility NUMBER without precision and scale should have variable scale
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3263">Issue #3263</a>: Unable to store BigDecimal with negative scale in NUMERIC(19,6) column
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3261">PR #3261</a>: Small optimization for MIN and MAX
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3258">Issue #3258</a> / <a href="https://github.com/h2database/h2database/pull/3259">PR #3259</a>: Prevent incorrect optimization of COUNT(*) and other changes
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3255">PR #3255</a>: Throw proper exception when type of argument isn't known
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3249">Issue #3249</a>: Multi-column assignment with subquery throws exception when subquery doesn't return any rows
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3248">PR #3248</a>: Remove redundant uniqueness check, correct version in pom
+</li>
+<li><a href="https://github.com/h2database/h2database/pull/3247">PR #3247</a>: Avoid AIOBE exception in TestCrashAPI and in Transaction
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3241">Issue #3241</a>: ResultSetMetaData::getColumnTypeName should produce the correct ARRAY type
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3204">Issue #3204</a>: H2 Tools Web Console: Unicode 32
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3227">Issue #3227</a>: Regression when referencing outer joined column from correlated subquery
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3237">Issue #3237</a>: Can no longer cast CHAR(n) to BOOLEAN with n > 1
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3235">Issue #3235</a>: Regression in IN predicate with empty in list
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3236">Issue #3236</a>: NullPointerException in DatabaseMetaData::getIndexInfo when querying the info for views
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3233">Issue #3233</a>: General error when using NULL predicate on _ROWID_ column
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3223">Issue #3223</a>: TRUNC(v, p) with negative precisions no longer works
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3221">Issue #3221</a>: NullPointerException when creating domain
+</li>
+<li><a href="https://github.com/h2database/h2database/issues/3186">Issue #3186</a>: ResultSetMetaData.getSchemaName() returns empty string for aliased columns
+</li>
+</ul>
+
+
+<!-- [close] { -->
+</div></td></tr></table>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="search.js"></script>
+<script type="text/javascript">
+function startTranslate() {
+    document.getElementById('translate').style.display='';
+    var script=document.createElement('script');
+    script.setAttribute("type","text/javascript");
+    script.setAttribute("src", "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+    document.getElementsByTagName("head")[0].appendChild(script);
+}
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<!-- } --><!-- analytics --></body></html>
