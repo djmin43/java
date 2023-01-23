@@ -12,6 +12,8 @@ public class MemoryTodoItemRepository implements TodoItemRepository {
     @Override
     public TodoItem create(TodoItem todoItem) {
         todoItem.setId(++sequence);
+        System.out.println("todoItem = " + todoItem.getId());
+        System.out.println(sequence);
         store.put(todoItem.getId(), todoItem);
         return todoItem;
     }
@@ -41,5 +43,9 @@ public class MemoryTodoItemRepository implements TodoItemRepository {
     @Override
     public List<TodoItem> getAllTodoItems() {
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore() {
+        store.clear();
     }
 }
