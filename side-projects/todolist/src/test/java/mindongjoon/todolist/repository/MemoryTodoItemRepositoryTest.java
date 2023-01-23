@@ -69,13 +69,13 @@ class MemoryTodoItemRepositoryTest {
 
     @Test
     void getAllTodoItems() {
-        this.createNewTodoItem("item1", "the status will be false");
-        this.createNewTodoItem("item2", "the status will be false");
-        this.createNewTodoItem("item3", "the status will be false");
-        this.createNewTodoItem("item4", "the status will be false");
-        this.createNewTodoItem("item5", "the status will be false");
-        this.createNewTodoItem("item6", "the status will be false");
-        this.createNewTodoItem("item7", "the status will be false");
+        this.createNewTodoItem("item1", "1");
+        this.createNewTodoItem("item2", "2");
+        this.createNewTodoItem("item3", "3");
+        this.createNewTodoItem("item4", "4");
+        this.createNewTodoItem("item5", "5");
+        this.createNewTodoItem("item6", "6");
+        this.createNewTodoItem("item7", "7");
         assertThat(repository.getAllTodoItems().size()).isEqualTo(7);
 
     }
