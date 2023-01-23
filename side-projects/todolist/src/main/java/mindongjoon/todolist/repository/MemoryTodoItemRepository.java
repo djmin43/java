@@ -1,9 +1,12 @@
 package mindongjoon.todolist.repository;
 
 import mindongjoon.todolist.domain.TodoItem;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Component
 public class MemoryTodoItemRepository implements TodoItemRepository {
 
     private static Map<Long, TodoItem> store = new HashMap<>();
