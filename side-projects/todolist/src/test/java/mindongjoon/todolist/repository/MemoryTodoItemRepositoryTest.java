@@ -6,6 +6,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -47,11 +49,22 @@ class MemoryTodoItemRepositoryTest {
 
     @Test
     void findById() {
-
+        TodoItem result = this.createNewTodoItem("itemC", "this will be found");
+        Long id = result.getId();
+        Optional<TodoItem> itemFoundById = repository.findById(id);
+        assertThat(itemFoundById.get()).isSameAs(result);
     }
 
     @Test
-    void sortByIsFinished() {
+    void filterByIsFinished() {
+        TodoItem resultA = this.createNewTodoItem("itemA", "the status will be false");
+        TodoItem resultB = this.createNewTodoItem("itemB", "the status will be false");
+        TodoItem resultC = this.createNewTodoItem("itemC", "the status will be true");
+        resultC.setIsFinished(true);
+        List<TodoItem> trueItems = repository.filterByIsFinished(true);
+        assertThat(trueItems.size()).isEqualTo(1);
+        assertThat(trueItems.stream().filter(item -> item.getIsFinished().equals(false)).collect(Collectors.toList()).size()).isEqualTo(0);
+
     }
 
     @Test

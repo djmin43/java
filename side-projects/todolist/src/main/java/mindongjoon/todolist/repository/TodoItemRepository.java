@@ -15,7 +15,7 @@ public interface TodoItemRepository {
 
     Optional<TodoItem> findById(Long id);
 
-    List<TodoItem> sortByIsFinished(Boolean isFinished);
+    List<TodoItem> filterByIsFinished(Boolean isFinished);
 
     List<TodoItem> getAllTodoItems();
 }

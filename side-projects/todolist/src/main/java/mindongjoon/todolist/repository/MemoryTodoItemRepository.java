@@ -36,8 +36,8 @@ public class MemoryTodoItemRepository implements TodoItemRepository {
     }
 
     @Override
-    public List<TodoItem> sortByIsFinished(Boolean isFinished) {
-        return new ArrayList<>((Collection<TodoItem>) store.values().stream().filter(item -> item.getIsFinished().equals(isFinished)));
+    public List<TodoItem> filterByIsFinished(Boolean isFinished) {
+        return new ArrayList<>(store.values().stream().filter(item -> item.getIsFinished().equals(isFinished)).toList());
     }
 
     @Override
