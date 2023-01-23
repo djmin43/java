@@ -57,8 +57,8 @@ class MemoryTodoItemRepositoryTest {
 
     @Test
     void filterByIsFinished() {
-        TodoItem resultA = this.createNewTodoItem("itemA", "the status will be false");
-        TodoItem resultB = this.createNewTodoItem("itemB", "the status will be false");
+        this.createNewTodoItem("itemA", "the status will be false");
+        this.createNewTodoItem("itemB", "the status will be false");
         TodoItem resultC = this.createNewTodoItem("itemC", "the status will be true");
         resultC.setIsFinished(true);
         List<TodoItem> trueItems = repository.filterByIsFinished(true);
@@ -69,6 +69,15 @@ class MemoryTodoItemRepositoryTest {
 
     @Test
     void getAllTodoItems() {
+        this.createNewTodoItem("item1", "the status will be false");
+        this.createNewTodoItem("item2", "the status will be false");
+        this.createNewTodoItem("item3", "the status will be false");
+        this.createNewTodoItem("item4", "the status will be false");
+        this.createNewTodoItem("item5", "the status will be false");
+        this.createNewTodoItem("item6", "the status will be false");
+        this.createNewTodoItem("item7", "the status will be false");
+        assertThat(repository.getAllTodoItems().size()).isEqualTo(7);
+
     }
 
     public TodoItem createNewTodoItem(String name, String description) {
