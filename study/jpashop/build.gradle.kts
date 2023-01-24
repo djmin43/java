@@ -23,6 +23,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-devtools")
+	implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6")
     testImplementation("junit:junit:4.13.1")
 	testImplementation("junit:junit:4.13.1")
 	compileOnly("org.projectlombok:lombok")
