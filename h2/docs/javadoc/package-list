@@ -1,6 +1,0 @@
-org.h2.api
-org.h2.engine
-org.h2.fulltext
-org.h2.jdbc
-org.h2.jdbcx
-org.h2.tools
