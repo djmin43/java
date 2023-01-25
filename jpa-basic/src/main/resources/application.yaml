@@ -4,10 +4,12 @@ spring:
     username: sa
     password:
     driverClassName: org.h2.Driver
+
   jpa:
+    database: H2
     hibernate:
       ddl-auto: create
     properties:
       hibernate:
         format_sql: true
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+        show_sql: true
