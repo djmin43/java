@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,10 +19,12 @@ public class DBConnectTest {
 
     @Test
     @Transactional
+    @Rollback(value = false)
     public void saveMember() {
         Member member = new Member();
         member.setName("testA");
-        memberRepository.save(member);
+        Long saveId = memberRepository.save(member);
+        System.out.println("saveId = " + saveId);
     }
 
 

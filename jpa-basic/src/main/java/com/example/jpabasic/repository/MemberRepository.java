@@ -14,6 +14,7 @@ public class MemberRepository {
 
     public Long save(Member member) {
         em.persist(member);
+        System.out.println("member = " + member);
         return member.getId();
     }
 
