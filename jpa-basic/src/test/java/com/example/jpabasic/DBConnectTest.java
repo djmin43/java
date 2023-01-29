@@ -22,7 +22,7 @@ public class DBConnectTest {
     @Rollback(value = false)
     public void saveMember() {
         Member member = new Member();
-        member.setName("testA");
+        member.setUserName("helloName");
         Long saveId = memberRepository.save(member);
         System.out.println("saveId = " + saveId);
     }
