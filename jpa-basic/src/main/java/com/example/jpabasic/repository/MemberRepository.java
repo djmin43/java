@@ -1,6 +1,7 @@
 package com.example.jpabasic.repository;
 
 import com.example.jpabasic.domain.Member;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -14,7 +15,6 @@ public class MemberRepository {
 
     public Long save(Member member) {
         em.persist(member);
-        System.out.println("member = " + member);
         return member.getId();
     }
 
