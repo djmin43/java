@@ -1,7 +1,9 @@
 package com.example.jpabasic;
 
 import com.example.jpabasic.domain.Member;
+import com.example.jpabasic.domain.Team;
 import com.example.jpabasic.repository.MemberRepository;
+import com.example.jpabasic.repository.TeamRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +19,30 @@ public class JPABasicTest {
     @Autowired
     MemberRepository memberRepository;
 
+    @Autowired
+    TeamRepository teamRepository;
+
     @Test
     @Transactional
     @Rollback(value = false)
     public void saveMember() {
+        Team team = new Team();
+        team.setName("teamA");
+        teamRepository.save(team);
         Member member = new Member();
-        member.setUserName("helloName");
-        Long saveId = memberRepository.save(member);
-        System.out.println("saveId = " + saveId);
+        member.setTeam(team);
+        member.setUserName("userA");
+        memberRepository.save(member);
+
+    }
+
+    @Test
+    @Transactional
+    @Rollback(value = false)
+    public void saveTeam() {
+        Team team = new Team();
+        team.setName("teamA");
+        Long teamId = teamRepository.save(team);
     }
 
 
