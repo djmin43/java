@@ -34,6 +34,11 @@ public class JPABasicTest {
         member.setUserName("userA");
         memberRepository.save(member);
 
+
+
+
+
+
     }
 
     @Test

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Repository
 public class MemberRepository {
@@ -18,8 +19,9 @@ public class MemberRepository {
         em.persist(member);
         Member findMember = em.find(Member.class, member.getId());
 
-        Team team = findMember.getTeam();
-        System.out.println("new member's team name = " + team.getName());
+        List<Member> members = findMember.getTeam().getMembers();
+        System.out.println("members = " + members);
+
 
         return member.getId();
 
