@@ -1,4 +1,4 @@
-package jpagroup.jpashop.domain;
+package jpagroup.jpashop.domain.item;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,8 +19,7 @@ public abstract class Item {
     private Long id;
 
     private String name;
-
     private int price;
-    private Long stockQuantity;
+    private int stockQuantity;
 
 }
