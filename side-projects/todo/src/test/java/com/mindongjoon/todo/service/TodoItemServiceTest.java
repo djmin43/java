@@ -29,7 +29,8 @@ public class TodoItemServiceTest {
         todoItem.setDescription("이것은 테스트 todo입니다");
         todoItem.setIsDone(false);
         todoItem.setLocalDateTime(LocalDateTime.now());
-        todoItemService.addTodoItem(todoItem);
+        Long todoId = todoItemService.addTodoItem(todoItem);
+        Assertions.assertThat(todoId).isEqualTo(todoItem.getId());
 
     }
 }

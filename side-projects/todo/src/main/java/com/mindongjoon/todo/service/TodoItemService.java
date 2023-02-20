@@ -12,7 +12,8 @@ public class TodoItemService {
     private final TodoItemRepository todoItemRepository;
 
     @Transactional
-    public void addTodoItem(TodoItem todoItem) {
+    public Long addTodoItem(TodoItem todoItem) {
         todoItemRepository.add(todoItem);
+        return todoItem.getId();
     }
 }
