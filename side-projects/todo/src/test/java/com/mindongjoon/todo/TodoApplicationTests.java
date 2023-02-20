@@ -1,10 +1,10 @@
-package mindongjoon.parkinglot;
+package com.mindongjoon.todo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ParkinglotApplicationTests {
+class TodoApplicationTests {
 
 	@Test
 	void contextLoads() {
