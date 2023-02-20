@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
+import static org.assertj.core.api.Assertions.*;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
@@ -30,7 +32,18 @@ public class TodoItemServiceTest {
         todoItem.setIsDone(false);
         todoItem.setLocalDateTime(LocalDateTime.now());
         Long todoId = todoItemService.addTodoItem(todoItem);
-        Assertions.assertThat(todoId).isEqualTo(todoItem.getId());
+        assertThat(todoId).isEqualTo(todoItem.getId());
+    }
+
+    @Test
+    @Rollback(value = false)
+    public void findTodoItem() {
+        TodoItem todoItem = new TodoItem();
+        todoItem.setTitle("테스트1");
+        todoItemService.addTodoItem(todoItem);
+        TodoItem findItem = todoItemService.findTodoItem(todoItem.getId());
+        System.out.println("findItem = " + findItem.getTitle());
+        assertThat(findItem.getTitle()).isEqualTo("테스트1");
 
     }
 }

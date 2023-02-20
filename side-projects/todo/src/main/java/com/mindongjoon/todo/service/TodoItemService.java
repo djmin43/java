@@ -16,4 +16,10 @@ public class TodoItemService {
         todoItemRepository.add(todoItem);
         return todoItem.getId();
     }
+
+    @Transactional(readOnly = true)
+    public TodoItem findTodoItem(Long id) {
+        return todoItemRepository.findOne(id);
+    }
+
 }

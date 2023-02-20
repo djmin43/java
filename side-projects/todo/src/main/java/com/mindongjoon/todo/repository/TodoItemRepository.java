@@ -15,6 +15,10 @@ public class TodoItemRepository {
         em.persist(todoItem);
     }
 
+    public TodoItem findOne(Long id) {
+        return em.find(TodoItem.class, id);
+    }
+
     public void deleteOne(Long id) {
         em.createQuery("delete from TodoItem i where i.id = :id")
                 .setParameter("id", id)
