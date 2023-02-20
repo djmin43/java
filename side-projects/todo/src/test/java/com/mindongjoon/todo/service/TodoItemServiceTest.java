@@ -51,9 +51,7 @@ public class TodoItemServiceTest {
         TodoItem todoItem2 = new TodoItem();
         todoItem2.setTitle("테스트2");
         todoItemService.addTodoItem(todoItem2);
-
         List<TodoItem> todoItems = todoItemService.findAllTodoItem();
-
         System.out.println("todoItems = " + todoItems);
         assertThat(todoItems.size()).isEqualTo(2);
     }

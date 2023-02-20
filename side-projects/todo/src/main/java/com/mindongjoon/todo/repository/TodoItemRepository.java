@@ -26,11 +26,11 @@ public class TodoItemRepository {
                 .getResultList();
     }
 
-
-    public void deleteOne(Long id) {
+    public TodoItem deleteOne(Long id) {
         em.createQuery("delete from TodoItem i where i.id = :id")
                 .setParameter("id", id)
                 .executeUpdate();
+        return this.findOne(id);
     }
 
 
