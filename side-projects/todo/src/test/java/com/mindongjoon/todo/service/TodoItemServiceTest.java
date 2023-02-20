@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -23,7 +24,6 @@ public class TodoItemServiceTest {
     TodoItemService todoItemService;
 
     @Test
-    @Rollback(value = false)
     public void addTodoItem() {
 
         TodoItem todoItem = new TodoItem();
@@ -36,14 +36,27 @@ public class TodoItemServiceTest {
     }
 
     @Test
-    @Rollback(value = false)
     public void findTodoItem() {
         TodoItem todoItem = new TodoItem();
         todoItem.setTitle("테스트1");
         todoItemService.addTodoItem(todoItem);
         TodoItem findItem = todoItemService.findTodoItem(todoItem.getId());
-        System.out.println("findItem = " + findItem.getTitle());
         assertThat(findItem.getTitle()).isEqualTo("테스트1");
-
     }
+    @Test
+    public void findAllTodoItem() {
+        TodoItem todoItem1 = new TodoItem();
+        todoItem1.setTitle("테스트1");
+        todoItemService.addTodoItem(todoItem1);
+        TodoItem todoItem2 = new TodoItem();
+        todoItem2.setTitle("테스트2");
+        todoItemService.addTodoItem(todoItem2);
+
+        List<TodoItem> todoItems = todoItemService.findAllTodoItem();
+
+        System.out.println("todoItems = " + todoItems);
+        assertThat(todoItems.size()).isEqualTo(2);
+    }
+
+
 }

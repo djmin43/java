@@ -6,8 +6,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class TodoItemService {
     private final TodoItemRepository todoItemRepository;
 
@@ -17,9 +20,12 @@ public class TodoItemService {
         return todoItem.getId();
     }
 
-    @Transactional(readOnly = true)
     public TodoItem findTodoItem(Long id) {
         return todoItemRepository.findOne(id);
+    }
+
+    public List<TodoItem> findAllTodoItem() {
+        return todoItemRepository.findAll();
     }
 
 }
