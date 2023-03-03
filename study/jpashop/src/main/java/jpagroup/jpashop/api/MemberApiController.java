@@ -1,9 +1,11 @@
 package jpagroup.jpashop.api;
 
+import jpagroup.jpashop.domain.Member;
 import jpagroup.jpashop.service.MemberService;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,5 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemberApiController {
 
     private final MemberService memberService;
-    public CreateMemberReponse
+    public CreateMemberReponse saveMemberV1(@RequestBody @Valid Member member) {
+
+    }
 }
