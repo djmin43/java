@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -41,5 +44,37 @@ public class WikiPhilosophy {
      */
     public static void testConjecture(String destination, String source, int limit) throws IOException {
         // TODO: FILL THIS IN!
+        Connection conn = Jsoup.connect(source);
+        Document doc = conn.get();
+        String url = source;
+        for (int i=0; i<limit; i++) {
+            if (visited.contains(url)) {
+                System.err.println("We're in a loop, exiting.");
+                return;
+            } else {
+                visited.add(url);
+            }
+            Element elt = getFirstValidLink(url);
+            if (elt == null) {
+                System.err.println("Got to a page with no valid links.");
+                return;
+            }
+
+            System.out.println("**" + elt.text() + "**");
+            url = elt.attr("abs:href");
+
+            if (url.equals(destination)) {
+                System.out.println("Eureka!");
+                break;
+            }
+        }
+    }
+
+    public static Element getFirstValidLink(String url) throws IOException {
+        print("Fetching %s...", url);
+        Elements paragraphs = wf.fetchWikipedia(url);
+        WikiParser wp = new WikiParser(paragraphs);
+        Element elt = wp.findFirstLink();
+        return elt;
     }
 }
