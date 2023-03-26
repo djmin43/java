@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -29,6 +26,7 @@ public class WikiPhilosophy {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
+
         String destination = "https://en.wikipedia.org/wiki/Philosophy";
         String source = "https://en.wikipedia.org/wiki/Java_(programming_language)";
 
@@ -43,9 +41,6 @@ public class WikiPhilosophy {
      * @throws IOException
      */
     public static void testConjecture(String destination, String source, int limit) throws IOException {
-        // TODO: FILL THIS IN!
-        Connection conn = Jsoup.connect(source);
-        Document doc = conn.get();
         String url = source;
         for (int i=0; i<limit; i++) {
             if (visited.contains(url)) {
@@ -70,11 +65,28 @@ public class WikiPhilosophy {
         }
     }
 
+    /**
+     * Loads and parses a URL, then extracts the first link.
+     *
+     * @param url
+     * @return the Element of the first link, or null.
+     * @throws IOException
+     */
     public static Element getFirstValidLink(String url) throws IOException {
         print("Fetching %s...", url);
         Elements paragraphs = wf.fetchWikipedia(url);
         WikiParser wp = new WikiParser(paragraphs);
         Element elt = wp.findFirstLink();
         return elt;
+    }
+
+    /**
+     * Formats and print the arguments.
+     *
+     * @param msg
+     * @param args
+     */
+    private static void print(String msg, Object... args) {
+        System.out.println(String.format(msg, args));
     }
 }
