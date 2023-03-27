@@ -21,3 +21,8 @@ public class Theater {
 
     }
 }
+
+// Three purposes of software module
+// 1. should function
+// 2. should be easy to change
+// 3. should be easy to comprehend
