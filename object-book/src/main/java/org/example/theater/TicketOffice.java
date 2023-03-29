@@ -1,7 +1,6 @@
-package org.example;
+package org.example.theater;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class TicketOffice {
