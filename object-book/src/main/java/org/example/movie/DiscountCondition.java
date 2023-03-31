@@ -1,5 +1,5 @@
 package org.example.movie;
 
-public class DiscountCondition {
+public interface DiscountCondition {
     boolean isSatisfiedBy(Screening screening);
 }

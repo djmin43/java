@@ -3,7 +3,7 @@ package org.example.movie;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DiscountPolicy {
+public abstract class DiscountPolicy {
 
     private List<DiscountCondition> conditions = new ArrayList<>();
 
