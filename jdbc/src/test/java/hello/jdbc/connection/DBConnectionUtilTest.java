@@ -13,7 +13,6 @@ class DBConnectionUtilTest {
     void connection() {
         Connection connection = DBConnectionUtil.getConnection();
         Assertions.assertThat(connection).isNotNull();
-
     }
 
 }
