@@ -35,6 +35,15 @@ public class MemberRepositoryV0 {
 
 
     private void close(Connection conn, Statement stmt, ResultSet resultSet) {
+
+        if (resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                log.info("error", e);
+            }
+        }
+
         if (stmt != null) {
             try {
                 stmt.close(); //Exception
