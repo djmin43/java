@@ -29,13 +29,27 @@ public class MemberRepositoryV0 {
             log.error("db error", e);
             throw e;
         } finally {
-            pstmt.close(); //Exception
-            conn.close();
+            close(conn, pstmt, null);
         }
     }
 
-    private void close(Connection conn, Statement stmt, ResultSet resultSet) {
 
+    private void close(Connection conn, Statement stmt, ResultSet resultSet) {
+        if (stmt != null) {
+            try {
+                stmt.close(); //Exception
+            } catch (SQLException e) {
+                log.info("error", e);
+            }
+        }
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                log.info("error", e);
+            }
+
+        }
     }
 
     private Connection getConnection() {
