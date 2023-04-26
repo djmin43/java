@@ -127,7 +127,7 @@ public class MemberRepositoryV1 {
 
     private Connection getConnection() throws SQLException {
         Connection conn = dataSource.getConnection();
-        log.info("get connection={}, class={}", conn);
+        log.info("get connection={}, class={}", conn, conn.getClass());
         return conn;
     }
 
