@@ -17,6 +17,10 @@ public class MemberRepositoryV1 {
 
     private final DataSource dataSource;
 
+    public MemberRepositoryV1(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
     public Member save(Member member) throws SQLException {
         String sql = "insert into member(member_id, money) values(?, ?)";
 
