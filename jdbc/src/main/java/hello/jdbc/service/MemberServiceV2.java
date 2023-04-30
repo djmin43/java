@@ -2,6 +2,7 @@ package hello.jdbc.service;
 
 import hello.jdbc.domain.Member;
 import hello.jdbc.repository.MemberRepositoryV1;
+import hello.jdbc.repository.MemberRepositoryV2;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,7 +18,7 @@ import java.sql.SQLException;
 public class MemberServiceV2 {
 
     private final DataSource dataSource;
-    private final MemberRepositoryV1 memberRepository;
+    private final MemberRepositoryV2 memberRepository;
 
     public void accountTransfer(String fromId, String toId, int money) throws SQLException {
         Connection con = dataSource.getConnection();
