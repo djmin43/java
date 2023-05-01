@@ -76,38 +76,6 @@ public class MemberRepositoryV3 {
         }
     }
 
-    public Member findById(Connection conn, String memberId) throws SQLException {
-        String sql = "select * from member where member_id = ?";
-
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-
-        try {
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, memberId);
-
-            rs = pstmt.executeQuery();
-
-            if (rs.next()) {
-                Member member = new Member();
-                member.setMemberId(rs.getString("member_id"));
-                member.setMoney(rs.getInt("money"));
-                return member;
-            } else {
-                throw new NoSuchElementException("member not found memberId=" + memberId);
-            }
-
-        } catch (SQLException e) {
-            log.error("db errpr", e);
-            throw e;
-        } finally {
-            // connection은 여기서 닫지 않는다.!!!
-            JdbcUtils.closeResultSet(rs);
-            JdbcUtils.closeStatement(pstmt);
-//            JdbcUtils.closeConnection(conn);
-        }
-    }
-
     public void update(String memberId, int money) throws SQLException {
         String sql = "update member set money=? where member_id=?";
 
@@ -126,27 +94,6 @@ public class MemberRepositoryV3 {
             throw e;
         } finally {
             close(conn, pstmt, null);
-        }
-    }
-
-    public void update(Connection conn, String memberId, int money) throws SQLException {
-        String sql = "update member set money=? where member_id=?";
-
-        PreparedStatement pstmt = null;
-
-        try {
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, money);
-            pstmt.setString(2, memberId);
-            int resultSize = pstmt.executeUpdate();
-            log.info("resultSize={}", resultSize);
-        } catch (SQLException e) {
-            log.error("db error", e);
-            throw e;
-        } finally {
-            // connection은 여기서 닫지 않는다.!!!
-            JdbcUtils.closeStatement(pstmt);
-//            JdbcUtils.closeConnection(conn);
         }
     }
 
@@ -171,12 +118,12 @@ public class MemberRepositoryV3 {
 
     }
 
-
     private void close(Connection conn, Statement stmt, ResultSet resultSet) {
 
         JdbcUtils.closeResultSet(resultSet);
         JdbcUtils.closeStatement(stmt);
-        JdbcUtils.closeConnection(conn);
+        // 주의! 트랜잭션 동기화를 사용하려면 DataSourceUtils를 사용해야 한다.
+        DataSourceUtils.releaseConnection(conn, dataSource);
 
     }
 
