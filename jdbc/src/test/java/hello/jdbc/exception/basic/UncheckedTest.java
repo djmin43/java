@@ -59,7 +59,7 @@ public class UncheckedTest {
 
 
     static class Repository {
-        public void call() {
+        public void call() throws MyUncheckedException {
             throw new MyUncheckedException("ex");
         }
     }
