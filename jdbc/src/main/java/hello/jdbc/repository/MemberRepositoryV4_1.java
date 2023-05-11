@@ -72,8 +72,7 @@ public class MemberRepositoryV4_1 implements MemberRepository {
             }
 
         } catch (SQLException e) {
-            log.error("db errpr", e);
-            throw e;
+            throw new MyDbException(e);
         } finally {
             close(conn, pstmt, rs);
         }
@@ -94,8 +93,7 @@ public class MemberRepositoryV4_1 implements MemberRepository {
             int resultSize = pstmt.executeUpdate();
             log.info("resultSize={}", resultSize);
         } catch (SQLException e) {
-            log.error("db error", e);
-            throw e;
+            throw new MyDbException(e);
         } finally {
             close(conn, pstmt, null);
         }
@@ -115,8 +113,7 @@ public class MemberRepositoryV4_1 implements MemberRepository {
             int resultSize = pstmt.executeUpdate();
             log.info("resultSize={}", resultSize);
         } catch (SQLException e) {
-            log.error("db error", e);
-            throw e;
+            throw new MyDbException(e);
         } finally {
             close(conn, pstmt, null);
         }
