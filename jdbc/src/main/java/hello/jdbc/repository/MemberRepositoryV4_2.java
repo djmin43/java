@@ -28,7 +28,7 @@ public class MemberRepositoryV4_2 implements MemberRepository {
 
     @Override
     public Member save(Member member) {
-        String sql = "insert into member(member_id, money) values(?, ?)";
+        String sql = "insert123 into member(member_id, money) values(?, ?)";
 
         Connection conn = null;
         PreparedStatement pstmt = null;
