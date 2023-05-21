@@ -1,4 +1,4 @@
-package com.example.authdemo;
+package com.example.mindongjoon.authdemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
