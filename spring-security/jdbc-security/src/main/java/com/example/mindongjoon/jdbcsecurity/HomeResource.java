@@ -21,5 +21,4 @@ public class HomeResource {
         return ("<h1>Welcome Admin</h1>");
     }
 
-
 }
