@@ -35,6 +35,8 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Todo> todosList = new ArrayList<>();
 
+    // static은 공유할때 사용을 많이 한다.
+    // public static method같은 경우는 util 함수로 만들때 사용한다.
     public static Member createMember(String userName, String password, String name) {
         Member member = new Member();
         member.setName(name);
