@@ -1,11 +1,14 @@
 package org.example.dataStructure;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Quiz {
 
     public static void main(String[] args) {
-        System.out.println(One());
-        System.out.println(Two());
-        System.out.println(Three());
+        Six();
 
     }
 
@@ -27,6 +30,25 @@ public class Quiz {
         String UniqueNumber = socialNumber.substring(7);
         return UniqueNumber;
     }
+
+    static String Four() {
+        String pin = "881120-2068234";
+        return pin.valueOf(pin.charAt(7));
+    }
+
+    static void Five() {
+        String a = "a:b:c:d";
+        String answer = a.replaceAll(":", "#");
+        System.out.println("answer = " + answer);
+
+    }
+
+    static void Six() {
+        ArrayList<Integer> myList = new ArrayList<>(Arrays.asList(1, 3, 5, 4, 2));
+        myList.sort(Comparator.naturalOrder());
+        System.out.println("myList = " + myList);
+    }
+
 
 
 
