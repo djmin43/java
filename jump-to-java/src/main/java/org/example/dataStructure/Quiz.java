@@ -5,54 +5,54 @@ import java.util.*;
 public class Quiz {
 
     public static void main(String[] args) {
-        Last();
+        last();
 
     }
 
-    static int One() {
+    static int one() {
         int literature = 90;
         int english = 75;
         int math = 55;
         return (literature + english + math) / 3;
     }
 
-    static String Two() {
+    static String two() {
         Integer number = 13;
         return number % 2 == 0 ? "even" : "odd";
     }
 
-    static String Three() {
+    static String three() {
         String socialNumber = "881120-1068234";
         String DOB = socialNumber.substring(0, 6);
         String UniqueNumber = socialNumber.substring(7);
         return UniqueNumber;
     }
 
-    static String Four() {
+    static String four() {
         String pin = "881120-2068234";
         return pin.valueOf(pin.charAt(7));
     }
 
-    static void Five() {
+    static void five() {
         String a = "a:b:c:d";
         String answer = a.replaceAll(":", "#");
         System.out.println("answer = " + answer);
 
     }
 
-    static void Six() {
+    static void six() {
         ArrayList<Integer> myList = new ArrayList<>(Arrays.asList(1, 3, 5, 4, 2));
         myList.sort(Comparator.naturalOrder());
         System.out.println("myList = " + myList);
     }
 
-    static void Seven() {
+    static void seven() {
         ArrayList<String> myList = new ArrayList<>(Arrays.asList("Life", "is", "too", "short"));
         String join = String.join(" ", myList);
         System.out.println("join = " + join);
     }
 
-    static void Eight() {
+    static void eight() {
         HashMap<String, Integer> grade = new HashMap<>();
         grade.put("A", 90);
         grade.put("B", 80);
@@ -62,7 +62,7 @@ public class Quiz {
         System.out.println("grade = " + grade);
     }
 
-    static void Nine() {
+    static void nine() {
         ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 1, 1, 2, 2, 3, 3, 3, 4, 4, 5));
         HashSet newNumbers = new HashSet(Arrays.asList(numbers.toArray()));
         System.out.println("newNumbers = " + newNumbers);
@@ -85,7 +85,7 @@ public class Quiz {
         System.out.println(String.format("가격은 %d원 입니다.", price));
     }
 
-    static void Last() {
+    static void last() {
         printCoffeePrice(CoffeeEnum.AMERICANO);
     }
 
