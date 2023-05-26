@@ -25,5 +25,10 @@ class ZooKeeper {
 }
 public class Sample {
     public static void main(String[] args) {
+        ZooKeeper zooKeeper = new ZooKeeper();
+        Lion lion = new Lion();
+        Tiger tiger = new Tiger();
+        zooKeeper.feed(lion);
+        zooKeeper.feed(tiger);
     }
 }
