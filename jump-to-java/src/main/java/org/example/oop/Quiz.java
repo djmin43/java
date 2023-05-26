@@ -36,11 +36,49 @@ class MaxLimitCalculator extends Calculator {
     }
 }
 
+class Gold implements Mineral {
+    public int getValue() {
+        return 100;
+    }
+}
+
+class Silver implements Mineral {
+    public int getValue() {
+        return 90;
+    }
+
+}
+
+class Bronze implements Mineral {
+    public int getValue() {
+        return 80;
+    }
+
+}
+
+interface Mineral {
+    public int getValue();
+}
+
+class MineralCalculator {
+    int value = 0;
+
+    public void add(Mineral mineral) {
+        this.value += mineral.getValue();
+    }
+
+    public int getValue() {
+        return this.value;
+    }
+}
+
 public class Quiz {
 
     public static void main(String[] args) {
-        Calculator cal = new Calculator();
-        cal.add(3);
-        System.out.println(cal.getValue());
+        MineralCalculator cal = new MineralCalculator();
+        cal.add(new Gold());
+        cal.add(new Silver());
+        cal.add(new Bronze());
+        System.out.println(cal.getValue());  // 270 출력
     }
 }
