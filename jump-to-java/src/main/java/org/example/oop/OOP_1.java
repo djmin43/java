@@ -1,6 +1,6 @@
 package org.example.oop;
 
-public class oop_1 {
+public class OOP_1 {
 
     class Calculator {
         static int result = 0;
