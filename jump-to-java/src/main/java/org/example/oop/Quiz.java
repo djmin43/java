@@ -5,38 +5,19 @@ import java.util.Arrays;
 import java.util.OptionalDouble;
 
 class Calculator {
-    int value;
+    Integer value;
 
     Calculator() {
         this.value = 0;
     }
 
+
     void add(int val) {
         this.value += val;
     }
 
-    int getValue() {
+    public Integer getValue() {
         return this.value;
-    }
-
-    boolean isOdd(int val) {
-        return val % 2 != 0;
-    }
-
-    int avg(int[] intArray) {
-        int sum = 0;
-        for (Integer integer : intArray) {
-            sum += integer;
-        }
-        return sum / intArray.length;
-    }
-
-    int avg(ArrayList<Integer> intArray) {
-        int sum = 0;
-        for (Integer integer : intArray) {
-            sum += integer;
-        }
-        return sum / intArray.toArray().length;
     }
 }
 
@@ -58,9 +39,8 @@ class MaxLimitCalculator extends Calculator {
 public class Quiz {
 
     public static void main(String[] args) {
-        int[] data = {1, 3, 5, 7, 9};
         Calculator cal = new Calculator();
-        int result = cal.avg(data);
-        System.out.println(result);  // 5 출력
+        cal.add(3);
+        System.out.println(cal.getValue());
     }
 }
