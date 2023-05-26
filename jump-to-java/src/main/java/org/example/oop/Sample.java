@@ -16,6 +16,10 @@ class Dog extends Animal {  // Animal 클래스를 상속한다.
 
 class HouseDog extends Dog {
 
+    HouseDog(String name) {
+        this.name = name;
+    }
+
     void sleep() {
         System.out.println(this.name + " zzz in house");
     }
@@ -32,8 +36,7 @@ public class Sample {
         Dog dog = new Dog();
         dog.setName("poppy");
         dog.sleep();
-        HouseDog houseDog = new HouseDog();
-        houseDog.setName("happy");
+        HouseDog houseDog = new HouseDog("happy");
         houseDog.sleep();
         houseDog.sleep(5);
     }
