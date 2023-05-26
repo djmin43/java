@@ -1,5 +1,20 @@
 package org.example.oop;
 
+interface Predator {
+    String getFood();
+
+    default void printFood() {
+        System.out.printf("my food is %s\n", getFood());
+    }
+
+    int LEG_COUNT = 4;  // 인터페이스 상수
+
+    static int speed() {
+        return LEG_COUNT * 30;
+    }
+
+}
+
 class Animal {
     String name;
 
@@ -8,27 +23,42 @@ class Animal {
     }
 }
 
-class Tiger extends Animal {
+class Tiger extends Animal implements Predator {
+    public String getFood() {
+        return "apple";
+    }
 }
 
-class Lion extends Animal {
+class Lion extends Animal implements Predator {
+    public String getFood() {
+        return "banana";
+    }
+
 }
 
 class ZooKeeper {
-    void feed(Tiger tiger) {  // 호랑이가 오면 사과를 던져 준다.
-        System.out.println("feed apple");
-    }
 
-    void feed(Lion lion) {  // 사자가 오면 바나나를 던져준다.
-        System.out.println("feed banana");
+    void feed(Predator predator) {
+        System.out.println("feed " + predator.getFood());
+    }
+}
+
+class Bouncer {
+    void barkAnimal(Animal animal) {
+        if (animal instanceof Tiger) {
+            System.out.println("어흥");
+        } else if (animal instanceof Lion) {
+            System.out.println("으르렁");
+        }
     }
 }
 public class Sample {
     public static void main(String[] args) {
-        ZooKeeper zooKeeper = new ZooKeeper();
         Lion lion = new Lion();
         Tiger tiger = new Tiger();
-        zooKeeper.feed(lion);
-        zooKeeper.feed(tiger);
+
+        Bouncer bouncer = new Bouncer();
+        bouncer.barkAnimal(lion);
+        bouncer.barkAnimal(tiger);
     }
 }
