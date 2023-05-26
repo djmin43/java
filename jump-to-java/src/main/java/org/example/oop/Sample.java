@@ -1,18 +1,23 @@
 package org.example.oop;
 
-interface Predator {
-    String getFood();
 
-    default void printFood() {
+abstract class Predator extends Animal {
+    abstract String getFood();
+
+    void printFood() {
         System.out.printf("my food is %s\n", getFood());
     }
 
-    int LEG_COUNT = 4;  // 인터페이스 상수
+    static int LEG_COUNT = 4;  // 인터페이스 상수
 
     static int speed() {
         return LEG_COUNT * 30;
     }
 
+}
+
+interface Barkable {
+    void bark();
 }
 
 class Animal {
@@ -23,15 +28,24 @@ class Animal {
     }
 }
 
-class Tiger extends Animal implements Predator {
+class Tiger extends Predator implements Barkable {
     public String getFood() {
         return "apple";
     }
+
+    public void bark() {
+        System.out.println("어흥");
+    }
 }
 
-class Lion extends Animal implements Predator {
+class Lion extends Predator implements Barkable {
     public String getFood() {
         return "banana";
+    }
+
+    public void bark() {
+        System.out.println("으르렁");
+
     }
 
 }
@@ -44,12 +58,8 @@ class ZooKeeper {
 }
 
 class Bouncer {
-    void barkAnimal(Animal animal) {
-        if (animal instanceof Tiger) {
-            System.out.println("어흥");
-        } else if (animal instanceof Lion) {
-            System.out.println("으르렁");
-        }
+    void barkAnimal(Barkable animal) {
+        animal.bark();
     }
 }
 public class Sample {
@@ -60,5 +70,6 @@ public class Sample {
         Bouncer bouncer = new Bouncer();
         bouncer.barkAnimal(lion);
         bouncer.barkAnimal(tiger);
+
     }
 }
