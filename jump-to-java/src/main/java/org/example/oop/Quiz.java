@@ -1,5 +1,9 @@
 package org.example.oop;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.OptionalDouble;
+
 class Calculator {
     int value;
 
@@ -17,6 +21,22 @@ class Calculator {
 
     boolean isOdd(int val) {
         return val % 2 != 0;
+    }
+
+    int avg(int[] intArray) {
+        int sum = 0;
+        for (Integer integer : intArray) {
+            sum += integer;
+        }
+        return sum / intArray.length;
+    }
+
+    int avg(ArrayList<Integer> intArray) {
+        int sum = 0;
+        for (Integer integer : intArray) {
+            sum += integer;
+        }
+        return sum / intArray.toArray().length;
     }
 }
 
@@ -38,8 +58,9 @@ class MaxLimitCalculator extends Calculator {
 public class Quiz {
 
     public static void main(String[] args) {
+        int[] data = {1, 3, 5, 7, 9};
         Calculator cal = new Calculator();
-        System.out.println(cal.isOdd(3));  // 3은 홀수이므로 true 출력
-        System.out.println(cal.isOdd(4));  // 4는 짝수이므로 false 출력
+        int result = cal.avg(data);
+        System.out.println(result);  // 5 출력
     }
 }
