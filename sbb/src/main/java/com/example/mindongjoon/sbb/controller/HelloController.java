@@ -12,4 +12,10 @@ public class HelloController {
     public String hello() {
         return "Hello Worldx1";
     }
+
+    @GetMapping("sbb")
+    @ResponseBody
+    public String index() {
+        return "index";
+    }
 }
