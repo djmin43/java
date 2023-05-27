@@ -1,23 +1,15 @@
 package org.example.io;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class Sample {
 
     public static void main(String[] args) throws IOException {
-        InputStream in = System.in;
-
-        int a;
-        int b;
-        int c;
-        a = in.read();
-        b = in.read();
-        c = in.read();
-
-
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
+        Scanner sc = new Scanner(System.in);
+        System.out.println(sc.next());
     }
 }
