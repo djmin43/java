@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jwtsecurity
+    url: jdbc:postgresql://localhost:5432/jwt_security
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
