@@ -1,0 +1,27 @@
+
+J
+java:S3740C"/Provide the parametrized type for this generic.(š¶¿ þÿÿÿÿ
+J
+java:S3740C"/Provide the parametrized type for this generic.(š¶¿ þÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ÷õ¹ûÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÜÀåýÿÿÿÿ
+
+java:S1488"dImmediately return this expression instead of assigning it to the temporary variable "UniqueNumber".(õÜÀåýÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì¨®°üÿÿÿÿ
+:
+java:S1640P"Convert this Map to an EnumMap.(Íõëùÿÿÿÿ
+R
+java:S1854"7Remove this useless assignment to local variable "DOB".(Æ÷õ¹ûÿÿÿÿ
+C
+java:S1481"(Remove this unused "DOB" local variable.(Æ÷õ¹ûÿÿÿÿ
+K
+java:S2209!"5Change this instance-reference to a static reference.(ìüÏ­
+^
+java:S5361&"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Û¯Ðç
+N	java:S106'"9Replace this use of System.out or System.err by a logger.(âÊŒÝ
+S	java:S106."9Replace this use of System.out or System.err by a logger.(¢Ûðñûÿÿÿÿ
+N	java:S1064"9Replace this use of System.out or System.err by a logger.(£¦¾Ò
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(ØÒó×ùÿÿÿÿ
+N	java:S106D"9Replace this use of System.out or System.err by a logger.(ÞÏÍü
+S	java:S106U"9Replace this use of System.out or System.err by a logger.(‘Ž•¯úÿÿÿÿ
+b	java:S100X"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­±ßd
