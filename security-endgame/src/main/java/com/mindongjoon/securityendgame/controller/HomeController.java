@@ -26,6 +26,7 @@ public class HomeController {
 
     @PostMapping("/user")
     public ResultWrapperDTO<MemberCreationResponseDTO> createUser(@RequestBody MemberCreationRequestDTO memberCreationDTO) {
+        // refactor here
         Member newMember = new Member();
         newMember.setUsername(memberCreationDTO.getUsername());
         newMember.setEmail(memberCreationDTO.getEmail());
