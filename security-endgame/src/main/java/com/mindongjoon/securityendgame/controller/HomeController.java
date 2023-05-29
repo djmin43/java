@@ -28,7 +28,6 @@ public class HomeController {
         newMember.setEmail(memberCreationDTO.getEmail());
         newMember.setPassword(memberCreationDTO.getPassword());
         memberRepository.save(newMember);
-
         return newMember.getId();
 
     }
