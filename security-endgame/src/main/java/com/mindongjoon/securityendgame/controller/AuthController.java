@@ -21,7 +21,7 @@ public class AuthController {
     public LoginResponse login(@RequestBody @Validated LoginRequest request) {
         var token = jwtIssuer.issue(1L, request.getEmail(), List.of("USER"));
         return LoginResponse.builder()
-                .accessToken("blah")
+                .accessToken(token)
                 .build();
 
     }
