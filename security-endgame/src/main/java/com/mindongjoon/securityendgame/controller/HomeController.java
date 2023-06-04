@@ -22,7 +22,6 @@ public class HomeController {
 
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
-    private final AuthenticationManager authenticationManager;
 
     @GetMapping("/")
     public String home() {
@@ -41,13 +40,5 @@ public class HomeController {
         memberCreationResponseDTO.setId(newMember.getId());
         return new ResultWrapperDTO<>(memberCreationResponseDTO);
     }
-
-    @PostMapping("/login")
-    public String login(@RequestBody LoginRequest userLogin) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userLogin.username(), userLogin.password()));
-        authentication.
-        return userLogin.username();
-    }
-
 
 }
