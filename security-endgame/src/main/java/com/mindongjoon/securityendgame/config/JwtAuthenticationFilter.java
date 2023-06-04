@@ -21,8 +21,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtPrincipalConverter jwtPrincipalConverter;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+        // extract token from header
         extractTokenFromRequest(request)
+                // decode jwt with secret key and returns decoded jwt token as string
                 .map(jwtdecoder::decode)
+                // convert 'decoded' jwt to user principal that implements user details
                 .map(jwtPrincipalConverter::convert)
                 .map(UserPrincipalAuthenticationToken::new)
                 .ifPresent(auth -> SecurityContextHolder.getContext().setAuthentication(auth));
