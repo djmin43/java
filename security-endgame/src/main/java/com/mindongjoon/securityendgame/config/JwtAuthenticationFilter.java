@@ -28,6 +28,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 // convert 'decoded' jwt to user principal that implements user details
                 .map(jwtPrincipalConverter::convert)
                 .map(UserPrincipalAuthenticationToken::new)
+                // connects to Spring
                 .ifPresent(auth -> SecurityContextHolder.getContext().setAuthentication(auth));
         filterChain.doFilter(request, response);
     }
