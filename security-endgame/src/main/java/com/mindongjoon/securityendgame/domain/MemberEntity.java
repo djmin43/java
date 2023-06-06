@@ -5,16 +5,22 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import net.minidev.json.annotate.JsonIgnore;
 
 @Entity
 @Getter
 @Setter
-public class Member {
+public class MemberEntity {
 
     @Id
     @GeneratedValue
     private Long id;
-    private String username;
-    private String password;
     private String email;
+
+    @JsonIgnore
+    private String password;
+
+    private String role;
+
+    private String extraInfo;
 }

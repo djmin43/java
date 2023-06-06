@@ -23,6 +23,6 @@ public class AuthController {
         return LoginResponse.builder()
                 .accessToken(token)
                 .build();
-
     }
+
 }
