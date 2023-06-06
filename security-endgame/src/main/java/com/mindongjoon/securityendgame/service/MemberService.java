@@ -16,7 +16,7 @@ public class MemberService {
         MemberEntity user = new MemberEntity();
         user.setId(1L);
         user.setEmail(EXISTING_EMAIL);
-        user.setPassword("test");
+        user.setPassword("$2a$12$BLGLK8dP9c9AoamvxIGQJeVYqzdeg8MnQo5Usf4hyRJuXPU/Qc5.q");
         user.setRole("ROLE_ADMIN");
         user.setExtraInfo("my nice admin");
 
