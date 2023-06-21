@@ -39,4 +39,9 @@ public class Reservation {
     public static Reservation createNewReservation(String name, String phoneNumber, Boolean isTermsAgreed, Boolean isResolved) {
         return new Reservation(name, phoneNumber, isTermsAgreed, isResolved);
     }
+
+    public static Boolean toggleIsResolved(Reservation reservation) {
+        reservation.isResolved = !reservation.isResolved;
+        return reservation.isResolved;
+    }
 }
