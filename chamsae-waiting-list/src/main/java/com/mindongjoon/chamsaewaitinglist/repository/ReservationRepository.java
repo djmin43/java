@@ -15,8 +15,9 @@ public class ReservationRepository {
     private final EntityManager em;
 
     @Transactional
-    public void add(Reservation newReservation) {
+    public Long add(Reservation newReservation) {
         em.persist(newReservation);
+        return newReservation.getId();
     }
 
     @Transactional
