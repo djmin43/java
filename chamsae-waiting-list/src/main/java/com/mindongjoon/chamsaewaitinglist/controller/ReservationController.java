@@ -25,6 +25,6 @@ public class ReservationController {
 
     @PostMapping("/reservation")
     public Long createReservation(@RequestBody @Valid CreateReservationDto dto) {
-        return reservationRepository.add(Reservation.createNewReservation(dto.getName(), dto.getPhoneNumber(), dto.getTerms()));
+        return reservationRepository.add(Reservation.createNewReservation(dto.getName(), dto.getPhoneNumber(), dto.getIsTermsAgreed()));
     }
 }
