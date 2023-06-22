@@ -20,6 +20,10 @@ public class ReservationRepository {
         return newReservation.getId();
     }
 
+    public Reservation findOne(Long id) {
+         return em.find(Reservation.class, id);
+    }
+
     @Transactional
     public Long remove(Long id) {
         Reservation reservation = em.find(Reservation.class, id);

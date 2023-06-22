@@ -24,8 +24,10 @@ class ReservationRepositoryTest {
         //when
         Reservation test123 = Reservation.createNewReservation("test123", "123456", true, true);
         Long test123Id = reservationRepository.add(test123);
+        Reservation newReservation = reservationRepository.findOne(test123Id);
         //then
         assertThat(test123Id).isEqualTo(test123.getId());
+        assertThat(newReservation.getName()).isEqualTo("test123");
 
     }
 
