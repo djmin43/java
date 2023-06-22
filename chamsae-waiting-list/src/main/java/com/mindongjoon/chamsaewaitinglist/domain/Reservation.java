@@ -32,15 +32,15 @@ public class Reservation {
     @LastModifiedDate
     private LocalDateTime lastModifiedAt;
 
-    private Reservation(String name, String phoneNumber, Boolean isTermsAgreed, Boolean isResolved) {
+    private Reservation(String name, String phoneNumber, Boolean isTermsAgreed) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.isTermsAgreed = isTermsAgreed;
-        this.isResolved = isResolved;
+        this.isResolved = false;
     }
 
-    public static Reservation createNewReservation(String name, String phoneNumber, Boolean isTermsAgreed, Boolean isResolved) {
-        return new Reservation(name, phoneNumber, isTermsAgreed, isResolved);
+    public static Reservation createNewReservation(String name, String phoneNumber, Boolean isTermsAgreed) {
+        return new Reservation(name, phoneNumber, isTermsAgreed);
     }
 
     public static Boolean toggleIsResolved(Reservation reservation) {

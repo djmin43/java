@@ -24,7 +24,7 @@ class ReservationRepositoryTest {
 
     @BeforeAll
     void init() {
-        Reservation test123 = Reservation.createNewReservation("filler", "01071994154", true, true);
+        Reservation test123 = Reservation.createNewReservation("filler", "01071994154", true);
         Long test123Id = reservationRepository.add(test123);
     }
 
@@ -34,7 +34,7 @@ class ReservationRepositoryTest {
         List<Reservation> reservations = reservationRepository.findAll();
         assertThat(reservations.size()).isEqualTo(1);
         //when
-        Reservation test123 = Reservation.createNewReservation("test123", "123456", true, true);
+        Reservation test123 = Reservation.createNewReservation("test123", "123456", true);
         Long test123Id = reservationRepository.add(test123);
         Reservation newReservation = reservationRepository.findOne(test123Id);
         //then
