@@ -5,10 +5,7 @@ import com.mindongjoon.chamsaewaitinglist.dto.CreateReservationDto;
 import com.mindongjoon.chamsaewaitinglist.repository.ReservationRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +23,10 @@ public class ReservationController {
     @PostMapping("/reservation")
     public Long createReservation(@RequestBody @Valid CreateReservationDto dto) {
         return reservationRepository.add(Reservation.createNewReservation(dto.getName(), dto.getPhoneNumber(), dto.getIsTermsAgreed()));
+    }
+
+    @PutMapping("/reservation/toggle/{id}")
+    public Boolean toggle(@PathVariable("id") Long id) {
+        return reservationRepository.toggleIsResolved(id);
     }
 }
