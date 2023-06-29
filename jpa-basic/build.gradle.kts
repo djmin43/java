@@ -20,7 +20,9 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    testImplementation("junit:junit:4.13.1")
+	implementation("org.projectlombok:lombok:1.18.26")
+	implementation("org.projectlombok:lombok:1.18.26")
+	testImplementation("junit:junit:4.13.1")
 	testImplementation("junit:junit:4.13.1")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("com.h2database:h2")
