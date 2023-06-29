@@ -3,8 +3,9 @@ package com.example.jpabasic.lessons.superclasses;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public class ProductItem {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn
+public class ProductItem extends BaseEntity {
 
     @Id
     @GeneratedValue
