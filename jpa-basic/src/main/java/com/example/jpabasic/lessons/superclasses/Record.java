@@ -5,6 +5,6 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("Alb")
-public class Album extends ProductItem {
+public class Record extends ProductItem {
     private String artist;
 }
