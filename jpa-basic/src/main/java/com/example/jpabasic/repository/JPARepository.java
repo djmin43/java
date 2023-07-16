@@ -2,6 +2,7 @@ package com.example.jpabasic.repository;
 
 import com.example.jpabasic.domain.Book;
 import com.example.jpabasic.domain.Member;
+import com.example.jpabasic.dto.MemberDto;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,14 +24,8 @@ public class JPARepository {
         member.setAge(10);
         em.persist(member);
 
-        List<Member> resultList = em.createQuery("select m from Member as m where m.name = :username", Member.class)
-                .setParameter("username", "member1")
+        List resultList = em.createQuery("select new jpql.MemberDto(m.name, m.age) from Member as m", MemberDto.class)
                 .getResultList();
-
-        for (Member member1 : resultList) {
-            System.out.println("member1 = " + member1.getName());
-        }
-
 
     }
 }
