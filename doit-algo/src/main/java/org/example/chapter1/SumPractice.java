@@ -10,6 +10,18 @@ public class SumPractice {
         int input = stdIn.nextInt();
         sumAll(input);
         gaussSum(input);
+        sumOf(1, input);
+    }
+
+    private static void sumOf(int a, int b) {
+        int sum = 0;
+
+        for (int i = a; i <= b; i++) {
+            sum += i;
+        }
+        System.out.println("sum = " + sum);
+
+
     }
 
     private static void gaussSum(int n) {
