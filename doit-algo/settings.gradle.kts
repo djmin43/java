@@ -1,0 +1,2 @@
+rootProject.name = "doit-algo"
+
