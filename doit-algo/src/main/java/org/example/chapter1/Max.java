@@ -1,4 +1,4 @@
-package org.example.Chapter1;
+package org.example.chapter1;
 
 public class Max {
 
