@@ -18,6 +18,17 @@ public class ReverseArray {
         reverse(randomArray);
         System.out.println();
         System.out.println("역순 정렬을 마쳤습니다.");
+
+        int sum = sumOf(randomArray);
+        System.out.println("sum = " + sum);
+    }
+
+    private static int sumOf(int[] a) {
+        int sum = 0;
+        for (int i : a) {
+            sum += i;
+        }
+        return sum;
     }
 
     private static void reverse(int[] array) {
