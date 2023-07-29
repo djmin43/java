@@ -3,7 +3,7 @@ package org.example.chapter2;
 public class DayOfYear {
 
     public static void main(String[] args) {
-        System.out.println(dayOfYear(2023, 10, 16));
+        System.out.println(leftDayOfYear(2023, 12, 31));
 
     }
 
@@ -19,9 +19,26 @@ public class DayOfYear {
     static int dayOfYear(int y, int m, int d) {
         int days = d;
 
-        for (int i = 1; i < m; i++){
+        for(int i = 1; i < m; i++){
             days += mdays[isLeap(y)][i - 1];
         }
         return days;
+    }
+
+    static int leftDayOfYear(int y, int m, int d) {
+        int days = d;
+        int totalDays = 0;
+        for(int i = 0; i < mdays[isLeap(y)].length; i++) {
+            totalDays += mdays[isLeap(y)][i];
+        }
+
+        for (int j = 1; j < m; j++) {
+            days += mdays[isLeap(y)][j - 1];
+        }
+
+        System.out.println(days);
+        System.out.println(totalDays);
+
+        return totalDays - days;
     }
 }
