@@ -20,8 +20,6 @@ public class SumPractice {
             sum += i;
         }
         System.out.println("sum = " + sum);
-
-
     }
 
     private static void gaussSum(int n) {
