@@ -1,0 +1,8 @@
+server:
+  port: 8000
+spring:
+  datasource:
+    url: jdbc:h2:file:data/demo;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
