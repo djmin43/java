@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /* *****************************************************************************
  *  Name:              Ada Lovelace
@@ -18,8 +19,9 @@ public class Deque<Item> implements Iterable<Item> {
 
     // construct an empty deque
     public Deque() {
-        this.first = null;
-        this.last = null;
+        Node node = new Node();
+        this.first = node;
+        this.last = node;
         this.count = 0;
     }
 
@@ -34,7 +36,8 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     // add the item to the front
-    public void addFirst(Item item) {
+    public void addFirst(Item item) throws IllegalArgumentException {
+        if (item == null) throw new IllegalArgumentException();
         Node oldFirst = this.first;
         Node node = new Node();
         node.item = item;
@@ -44,8 +47,8 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     // add the item to the back
-    public void addLast(Item item) {
-        Node oldLast = this.last;
+    public void addLast(Item item) throws IllegalArgumentException {
+        if (item == null) throw new IllegalArgumentException();
         Node node = new Node();
         node.item = item;
         node.next = null;
@@ -53,16 +56,14 @@ public class Deque<Item> implements Iterable<Item> {
             this.first = node;
         }
         else {
-            oldLast.next = node;
+            this.last = node;
         }
         count++;
     }
 
     // remove and return the item from the front
-    public Item removeFirst() {
-        if (isEmpty()) {
-            return null;
-        }
+    public Item removeFirst() throws NoSuchElementException {
+        if (isEmpty()) throw new NoSuchElementException();
         Node oldFirst = this.first;
         Node node = oldFirst.next;
         this.first = node;
@@ -71,14 +72,12 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     // remove and return the item from the back
-    public Item removeLast() {
-        if (isEmpty()) {
-            return null;
-        }
+    public Item removeLast() throws NoSuchElementException {
+        if (isEmpty()) throw new NoSuchElementException();
         Node temp = this.first;
         while (temp.next != null) {
-            System.out.println("temp.item = " + temp.item);
             this.last = temp;
+            System.out.println("temp = " + temp.item);
             temp = temp.next;
         }
         this.last.next = null;
@@ -94,8 +93,37 @@ public class Deque<Item> implements Iterable<Item> {
 
     // unit testing (required)
     public static void main(String[] args) {
+        // isEmpty
         Deque<String> deque = new Deque<String>();
+        boolean empty = deque.isEmpty();
+        System.out.println("empty should return true = " + empty);
+        // // addFirst
+        deque.addFirst("hello");
+        deque.addFirst("world");
+        deque.addFirst("java");
+        System.out.println("the first item should be java = " + deque.first.item);
+
+        // size
         int size = deque.size();
+        System.out.println("size should be three = " + size);
+        // addLast
+        deque.addLast("bye");
+        deque.addLast("javascript");
+        System.out.println("deque.last.item must be javascript = " + deque.last.item);
+
+
+        // removeFirst
+        String shouldBeWorld = deque.removeFirst();
+        String shouldBeHello = deque.removeFirst();
+        System.out.println("shouldBeWorld = " + shouldBeWorld);
+        System.out.println("shouldBeHello = " + shouldBeHello);
+        System.out.println("deque.first.item = " + deque.first.item);
+        System.out.println("deque.last.item = " + deque.last.item);
+
+        // removeLast
+        String sholdBeBye = deque.removeLast();
+        System.out.println("sholdBeBye = " + sholdBeBye);
+
     }
 
 }
