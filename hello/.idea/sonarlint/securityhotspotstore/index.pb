@@ -12,3 +12,8 @@ Deque.java,8/2/8258024fbd3630f1cf2aa59e251620570f3847b8
 Permuation.java,e/a/ea3ad6ad951f4b72cdfb0470627bfd13c2cd70bb
 <
 distinct.txt,0/3/036cac588c9c86bd70231515e5144137a06be259
+:
+
+Point.java,5/0/503d3cb0b79962ad6ec66b0f16a4e93cbb09ee5d
+>
+Collinear.java,3/0/3095a95fbc62cc5930641a0e8290c54340c26a7e
