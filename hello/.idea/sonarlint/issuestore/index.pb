@@ -17,3 +17,5 @@ Deque.java,8/2/8258024fbd3630f1cf2aa59e251620570f3847b8
 Point.java,5/0/503d3cb0b79962ad6ec66b0f16a4e93cbb09ee5d
 >
 Collinear.java,3/0/3095a95fbc62cc5930641a0e8290c54340c26a7e
+@
+LineSegment.java,5/8/587dccc754cf320e5b89bab36537e600b2333f8a
