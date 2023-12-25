@@ -1,3 +1,5 @@
+import edu.princeton.cs.algs4.In;
+
 import java.util.ArrayList;
 
 public class BruteCollinearPoints {
@@ -22,9 +24,14 @@ public class BruteCollinearPoints {
             if (points[i] == null) throw new IllegalArgumentException();
             int collinear = 1;
             Point initPoint = points[i];
-            for (int j = i; j < points.length; j++) {
-                if (points[j].compareTo(initPoint) == 0) throw new IllegalArgumentException();
-                if (points[j].slopeOrder().compare(points[i], points[j]) == 0) {
+            for (int j = i + 1; j < points.length; j++) {
+                System.out.println("j = " + j);
+                double slope1 = initPoint.slopeTo(initPoint);
+                double slope2 = initPoint.slopeTo(points[j]);
+                System.out.println("slope2 = " + slope2);
+                System.out.println("slope1 = " + slope1);
+                boolean hasSameAngle = slope2 == slope1;
+                if (hasSameAngle) {
                     collinear++;
                     if (collinear == 4) {
                         lineSegments.add(new LineSegment(points[i], points[j]));
@@ -36,5 +43,22 @@ public class BruteCollinearPoints {
         LineSegment[] resultArray = new LineSegment[lineSegments.size()];
         lineSegments.toArray(resultArray);
         return resultArray;
+    }
+
+    public static void main(String[] args) {
+        In in = new In("./collinear8.txt");
+        String[] collect = in.readAll().split("\\W+");
+        ArrayList<Point> pointList = new ArrayList<Point>();
+        for (int i = 0; i < collect.length; i += 2) {
+            int x = Integer.parseInt(collect[i]);
+            int y = Integer.parseInt(collect[i + 1]);
+            pointList.add(new Point(x, y));
+        }
+        Point[] array = pointList.toArray(new Point[pointList.size()]);
+        BruteCollinearPoints bruteCollinearPoints = new BruteCollinearPoints(array);
+        LineSegment[] segments = bruteCollinearPoints.segments();
+        System.out.println("segments = " + segments.length);
+
+
     }
 }

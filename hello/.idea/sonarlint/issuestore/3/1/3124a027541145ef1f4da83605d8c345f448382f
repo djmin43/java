@@ -1,5 +1,11 @@
 
+{
+java:S22933"YReplace the type specification in this constructor call with the diamond operator ("<>").(‹ÒÔ²üÿÿÿÿ8È²œÿÉ1
 t
-java:S1104"RMake points a static final constant or non-public and provide accessors if needed.(†’‚çÿÿÿÿÿ8Ú¶²ýÉ1
+java:S1104"RMake points a static final constant or non-public and provide accessors if needed.(†’‚çÿÿÿÿÿ8É²œÿÉ1
 7
-java:S1220""Move this file to a named package.8Û¶²ýÉ1
+java:S1220""Move this file to a named package.8É²œÿÉ1
+L	java:S106"+Replace this use of System.out by a logger.(°Áƒ‹ûÿÿÿÿ8µÍ¡ÿÉ1
+G	java:S106"+Replace this use of System.out by a logger.(Û»ûÚ8‰ˆ¬ÿÉ1
+G	java:S106 "+Replace this use of System.out by a logger.(ö¡Á¢8‰ˆ¬ÿÉ1
+L	java:S106<"+Replace this use of System.out by a logger.(±Ñ¢êþÿÿÿÿ8‹ˆ¬ÿÉ1
