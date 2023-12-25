@@ -19,3 +19,5 @@ Point.java,5/0/503d3cb0b79962ad6ec66b0f16a4e93cbb09ee5d
 Collinear.java,3/0/3095a95fbc62cc5930641a0e8290c54340c26a7e
 @
 LineSegment.java,5/8/587dccc754cf320e5b89bab36537e600b2333f8a
+I
+BruteCollinearPoints.java,3/1/3124a027541145ef1f4da83605d8c345f448382f
