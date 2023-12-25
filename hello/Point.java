@@ -61,7 +61,7 @@ public class Point implements Comparable<Point> {
      */
     public double slopeTo(Point that) {
         /* YOUR CODE HERE */
-        
+
     }
 
     /**
@@ -78,6 +78,11 @@ public class Point implements Comparable<Point> {
      */
     public int compareTo(Point that) {
         /* YOUR CODE HERE */
+        if (this.y < that.y) return -1;
+        if (this.y > that.y) return +1;
+        if (this.x < that.x) return -1;
+        if (this.x > that.x) return +1;
+        return 0;
     }
 
     /**
