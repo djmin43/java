@@ -4,6 +4,7 @@
  *  Last modified:     October 16, 1842
  **************************************************************************** */
 
+import edu.princeton.cs.algs4.MaxPQ;
 import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Arrays;
@@ -11,6 +12,7 @@ import java.util.Arrays;
 public class Board {
 
     int[][] board;
+    int[][] goalBoard;
 
     int N;
     int total;
@@ -22,6 +24,8 @@ public class Board {
 
         this.N = tiles.length;
         int[] initialFlatBoard = getFlatTiles(this.total);
+        this.goalBoard = getBoard(initialFlatBoard);
+
         StdRandom.shuffle(initialFlatBoard);
         this.board = getBoard(initialFlatBoard);
     }
@@ -50,10 +54,11 @@ public class Board {
     // number of tiles out of place
     public int hamming() {
         int difference = 0;
-        int[] goalBoard = getFlatTiles(this.total);
         int[] flatBoard = Arrays.stream(board).flatMapToInt(v -> Arrays.stream(v)).toArray();
-        for (int i = 0; i < goalBoard.length; i++) {
-            if (goalBoard[i] != flatBoard[i]) {
+        int[] flatGoalBoard = Arrays.stream(goalBoard).flatMapToInt(v -> Arrays.stream(v))
+                                    .toArray();
+        for (int i = 0; i < flatGoalBoard.length; i++) {
+            if (flatGoalBoard[i] != flatBoard[i]) {
                 difference++;
             }
         }
@@ -69,6 +74,7 @@ public class Board {
             }
         }
         return array;
+        MaxPQ
     }
 
     private int[] getFlatTiles(int total) {
