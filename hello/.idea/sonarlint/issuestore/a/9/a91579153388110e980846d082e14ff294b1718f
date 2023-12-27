@@ -3,4 +3,6 @@
 java:S1700	"Rename field "board"(×½±°ûÿÿÿÿ8†úÛÌÊ1
 7
 java:S1220""Move this file to a named package.8†úÛÌÊ1
-L	java:S106A"+Replace this use of System.out by a logger.(–•§¬øÿÿÿÿ8úÛÌÊ1
+
+java:S1186/"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÖÍÙÄ8½ÛúÌÊ1
+L	java:S106E"+Replace this use of System.out by a logger.(–•§¬øÿÿÿÿ8úÛÌÊ1

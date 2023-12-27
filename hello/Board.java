@@ -39,10 +39,14 @@ public class Board {
     }
 
     // board dimension n
-    // public int dimension()
+    public int dimension() {
+        return width;
+    }
 
     // number of tiles out of place
-    // public int hamming()
+    public int hamming() {
+        
+    }
 
     // sum of Manhattan distances between tiles and goal
     // public int manhattan()
@@ -61,7 +65,7 @@ public class Board {
 
     // unit testing (not graded)
     public static void main(String[] args) {
-        Board board1 = new Board(new int[3][3]);
+        Board board1 = new Board(new int[4][4]);
         System.out.println(board1.toString());
     }
 
