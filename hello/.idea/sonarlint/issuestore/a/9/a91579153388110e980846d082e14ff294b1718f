@@ -1,8 +1,10 @@
 
 6
-java:S1700	"Rename field "board"(×½±°ûÿÿÿÿ8†úÛÌÊ1
+java:S1700"Rename field "board"(×½±°ûÿÿÿÿ8¨é»ÎÊ1
 7
-java:S1220""Move this file to a named package.8†úÛÌÊ1
-
-java:S1186/"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÖÍÙÄ8½ÛúÌÊ1
-L	java:S106E"+Replace this use of System.out by a logger.(–•§¬øÿÿÿÿ8úÛÌÊ1
+java:S1220""Move this file to a named package.8¨é»ÎÊ1
+m	java:S116"LRename this field "N" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¢ÓÛüÿÿÿÿ8¯é»ÎÊ1
+]
+java:S16126";Replace this lambda with method reference 'Arrays::stream'.(‹Ö’úÿÿÿÿ8³é»ÎÊ1
+L	java:S106f"+Replace this use of System.out by a logger.(ú ıÂüÿÿÿÿ8±ø¿ÎÊ1
+L	java:S106g"+Replace this use of System.out by a logger.(–•§¬øÿÿÿÿ8®§ÁÎÊ1

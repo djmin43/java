@@ -4,34 +4,38 @@
  *  Last modified:     October 16, 1842
  **************************************************************************** */
 
+import edu.princeton.cs.algs4.StdRandom;
+
+import java.util.Arrays;
+
 public class Board {
 
     int[][] board;
-    int width;
-    int height;
+
+    int N;
+    int total;
 
     // create a board from an n-by-n array of tiles,
     // where tiles[row][col] = tile at (row, col)
     public Board(int[][] tiles) {
-        this.width = tiles.length;
-        this.height = tiles[0].length;
-        this.board = new int[height][width];
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                this.board[i][j] = (i * 3) + j;
-            }
-        }
+        this.total = tiles.length * tiles[0].length;
+
+        this.N = tiles.length;
+        int[] initialFlatBoard = getFlatTiles(this.total);
+        StdRandom.shuffle(initialFlatBoard);
+        this.board = getBoard(initialFlatBoard);
     }
+
 
     // string representation of this board
     public String toString() {
         String newLine = System.getProperty("line.separator");
         StringBuilder boardToString = new StringBuilder()
-                .append(height);
+                .append(N);
 
-        for (int i = 0; i < height; i++) {
+        for (int i = 0; i < N; i++) {
             boardToString.append(newLine);
-            for (int j = 0; j < width; j++) {
+            for (int j = 0; j < N; j++) {
                 boardToString.append(" ").append(board[i][j]);
             }
         }
@@ -40,12 +44,40 @@ public class Board {
 
     // board dimension n
     public int dimension() {
-        return width;
+        return N;
     }
 
     // number of tiles out of place
     public int hamming() {
-        
+        int difference = 0;
+        int[] goalBoard = getFlatTiles(this.total);
+        int[] flatBoard = Arrays.stream(board).flatMapToInt(v -> Arrays.stream(v)).toArray();
+        for (int i = 0; i < goalBoard.length; i++) {
+            if (goalBoard[i] != flatBoard[i]) {
+                difference++;
+            }
+        }
+        return difference;
+    }
+
+    private int[][] getBoard(int[] flatTiles) {
+        int[][] array = new int[N][N];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                int index = (i * N) + j;
+                array[i][j] = flatTiles[index];
+            }
+        }
+        return array;
+    }
+
+    private int[] getFlatTiles(int total) {
+        int[] array = new int[total];
+        for (int i = 0; i < total; i++) {
+            array[i] = i + 1;
+        }
+        array[array.length - 1] = 0;
+        return array;
     }
 
     // sum of Manhattan distances between tiles and goal
@@ -66,6 +98,8 @@ public class Board {
     // unit testing (not graded)
     public static void main(String[] args) {
         Board board1 = new Board(new int[4][4]);
+        int hamming = board1.hamming();
+        System.out.println("hamming = " + hamming);
         System.out.println(board1.toString());
     }
 
