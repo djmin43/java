@@ -1,8 +1,13 @@
 package org.example;
 
+import org.example.chpater1.RubberDuck;
+
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("hello");
+        RubberDuck duck = new RubberDuck();
+
+        duck.swim();
+
     }
 }
