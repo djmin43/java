@@ -1,4 +1,4 @@
-package org.example.chpater1;
+package org.example.strategy;
 
 public class MiniCharacterSimulator {
 
@@ -6,7 +6,7 @@ public class MiniCharacterSimulator {
 
         King king = new King();
         king.fight();
-        king.setWeaponBehavior(new SwordBehavior());
+        king.setWeaponBehavior(new KnifeBehavior());
         king.fight();
     }
 }

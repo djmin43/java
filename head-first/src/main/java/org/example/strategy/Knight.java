@@ -1,6 +1,7 @@
-package org.example.chpater1;
+package org.example.strategy;
 
 public class Knight extends Character {
+
     public Knight() {
         this.weaponBehavior = new KnifeBehavior();
     }
@@ -8,6 +9,6 @@ public class Knight extends Character {
     @Override
     public void display() {
         System.out.println("I am a knight!");
-
     }
+
 }

@@ -1,4 +1,4 @@
-package org.example.chpater1;
+package org.example.strategy;
 
 public class FlyWithWings implements FlyBehavior {
     public void fly() {

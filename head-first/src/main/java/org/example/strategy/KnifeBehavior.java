@@ -1,4 +1,4 @@
-package org.example.chpater1;
+package org.example.strategy;
 
 public class KnifeBehavior implements WeaponBehavior {
     public void useWeapon() {
