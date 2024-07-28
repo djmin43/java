@@ -8,18 +8,6 @@ public class WeatherData implements Subject {
 
     private List<Observer> observers;
 
-    public float getTemperature() {
-        return temperature;
-    }
-
-    public float getHumidity() {
-        return humidity;
-    }
-
-    public float getPressure() {
-        return pressure;
-    }
-
     private float temperature;
     private float humidity;
     private float pressure;
@@ -53,5 +41,16 @@ public class WeatherData implements Subject {
         measurementsChanged();
     }
 
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getPressure() {
+        return pressure;
+    }
 
 }
