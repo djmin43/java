@@ -2,13 +2,15 @@ package org.example.factory;
 
 public class NYPizzaStore extends PizzaStore {
 
-    Pizza createPizza(String item) {
+    protected Pizza createPizza(String item) {
+        Pizza pizza = null;
+        PizzaIngredientFactory pizzaIngredientFactory = new NYIngredientFactory();
         if (item.equals("cheese")) {
-            return new CheesePizza();
+            return new CheesePizza(pizzaIngredientFactory);
         }
         if (item.equals("pepperoni")) {
-            return new PepperoniPizza();
+            return new PepperoniPizza(pizzaIngredientFactory);
         }
-        return new GreekPizza();
+        return new GreekPizza(pizzaIngredientFactory);
     }
 }
