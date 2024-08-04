@@ -1,24 +1,14 @@
 package org.example.factory;
 
-public class GreekPizza implements Pizza{
+public class GreekPizza extends Pizza{
 
-    @Override
-    public void prepare() {
 
+    public GreekPizza() {
+        name ="그릭 피자";
+        dough ="씬 크러스트 도우";
+        sauce ="토마토 소스";
+        toppings.add("오이");
     }
 
-    @Override
-    public void bake() {
 
-    }
-
-    @Override
-    public void cut() {
-
-    }
-
-    @Override
-    public void box() {
-
-    }
 }
