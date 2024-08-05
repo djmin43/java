@@ -4,18 +4,18 @@ public class ChocolateBoiler {
     private boolean empty;
     private boolean boiled;
 
-    private ChocolateBoiler chocolateBoiler;
+    private static ChocolateBoiler chocolateBoiler;
 
     private ChocolateBoiler() {
         empty = true;
         boiled = false;
     }
 
-    public ChocolateBoiler getInstance() {
+    public static ChocolateBoiler getInstance() {
         if (chocolateBoiler == null) {
             return new ChocolateBoiler();
         }
-        return this.chocolateBoiler;
+        return chocolateBoiler;
     }
 
     public void fill() {
