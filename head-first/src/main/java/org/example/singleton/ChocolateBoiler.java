@@ -11,7 +11,7 @@ public class ChocolateBoiler {
         boiled = false;
     }
 
-    public static ChocolateBoiler getInstance() {
+    public static synchronized ChocolateBoiler getInstance() {
         if (chocolateBoiler == null) {
             return new ChocolateBoiler();
         }
