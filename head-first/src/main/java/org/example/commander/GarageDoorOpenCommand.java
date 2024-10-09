@@ -15,4 +15,8 @@ public class GarageDoorOpenCommand implements Command {
         this.garageDoor.down();
         this.garageDoor.lightOff();
     }
+
+    public void undo() {
+        this.garageDoor.stop();
+    }
 }
