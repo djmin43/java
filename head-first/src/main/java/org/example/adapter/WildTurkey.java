@@ -1,4 +1,4 @@
-package org.example.adapaterfacade;
+package org.example.adapter;
 
 public class WildTurkey implements Turkey {
     public void gobble() {

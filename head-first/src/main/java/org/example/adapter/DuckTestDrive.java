@@ -1,4 +1,4 @@
-package org.example.adapaterfacade;
+package org.example.adapter;
 
 public class DuckTestDrive {
     public static void main(String[] args) {

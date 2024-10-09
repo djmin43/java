@@ -1,4 +1,4 @@
-package org.example.adapaterfacade;
+package org.example.adapter;
 
 public class MallardDuck implements Duck {
     public void quack() {
