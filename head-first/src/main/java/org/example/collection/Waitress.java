@@ -1,10 +1,12 @@
 package org.example.collection;
 
-public class Waitress {
-    PancakeHouseMenu pancakeHouseMenu;
-    DinnerMenu dinnerMenu;
+import java.util.Iterator;
 
-    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinnerMenu dinnerMenu) {
+public class Waitress {
+    Menu pancakeHouseMenu;
+    Menu dinnerMenu;
+
+    public Waitress(Menu pancakeHouseMenu, Menu dinnerMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinnerMenu = dinnerMenu;
     }

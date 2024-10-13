@@ -1,5 +1,7 @@
 package org.example.collection;
 
+import java.util.Iterator;
+
 public class DinnerMenuIterator implements Iterator {
     MenuItem[] items;
     int position = 0;
@@ -20,5 +22,9 @@ public class DinnerMenuIterator implements Iterator {
         } else {
             return true;
         }
+    }
+
+    public void remove() {
+        throw new UnsupportedOperationException("Remove is not supported");
     }
 }
