@@ -1,18 +1,16 @@
-package org.example.collection;
+package headfirst.designpatterns.collections.iterator;
 
-import java.util.Iterator;
-
-public class DinnerMenuIterator implements Iterator<MenuItem> {
-    MenuItem[] items;
+public class DinerMenuIterator implements Iterator {
+    String[] items;
     int position = 0;
 
-    public DinnerMenuIterator(MenuItem[] items) {
+    public DinerMenuIterator(String[] items) {
         this.items = items;
     }
 
-    public MenuItem next() {
-        MenuItem menuItem = items[position];
-        position++;
+    public String next() {
+        String menuItem = items[position];
+        position = position + 1;
         return menuItem;
     }
 
@@ -22,9 +20,5 @@ public class DinnerMenuIterator implements Iterator<MenuItem> {
         } else {
             return true;
         }
-    }
-
-    public void remove() {
-        throw new UnsupportedOperationException("메뉴 항목은 지우면 안 됩니다.");
     }
 }
