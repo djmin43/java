@@ -22,40 +22,33 @@ public class RedNosedReports {
         Integer safeReports = 0;
 
         for (int i = 0; i < reports.size(); i++) {
-            boolean isSafe = false;
+            boolean isSafe = true;
             Integer firstCode = reports.get(i).get(0);
             Integer lastCode = reports.get(i).get(reports.get(i).size() - 1);
             boolean isAscending = firstCode < lastCode;
 
-            if (firstCode.equals(lastCode)) {
-                continue;
-            }
 
             for (int j = 0; j < reports.get(i).size() - 1; j++) {
                 Integer currentCode = reports.get(i).get(j);
                 Integer nextCode = reports.get(i).get(j + 1);
-                System.out.print(reports.get(i).get(j) + " ");
 
                 if (isAscending) {
                     if (currentCode >= nextCode) {
-                        continue;
+                        isSafe = false;
                     }
                     if (Math.abs(currentCode - nextCode) > 3) {
-                        continue;
+                        isSafe = false;
                     }
-                    isSafe = true;
                 } else {
                     if (currentCode <= nextCode) {
-                        continue;
+                        isSafe = false;
                     }
                     if (Math.abs(currentCode - nextCode) > 3) {
-                        continue;
+                        isSafe = false;
                     }
-                    isSafe = true;
                 }
 
             }
-            System.out.println(isSafe);
 
             if (isSafe) {
                 safeReports++;
