@@ -41,13 +41,18 @@ public class RedNosedReports {
             int issueLayerIndex = validator(reports.get(i));
 
             if (issueLayerIndex != -1) {
-                ArrayList<Integer> temp = reports.get(i);
-                temp.remove(validator(temp));
-                if (validator(temp) == -1) {
-                    isSafe = true;
-                } else {
-                    isSafe = false;
+                isSafe = false;
+
+                for (int j = 0; j < reports.get(i).size() - 1; j++) {
+                    ArrayList<Integer> temp = new ArrayList<>(reports.get(i));
+                    temp.remove(j);
+
+                    if (validator(temp) == -1) {
+                        isSafe = true;
+                        break;
+                    }
                 }
+
             }
 
             if (isSafe) {
