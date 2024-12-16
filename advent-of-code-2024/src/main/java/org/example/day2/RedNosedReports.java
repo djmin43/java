@@ -39,11 +39,9 @@ public class RedNosedReports {
         for (int i = 0; i < reports.size(); i++) {
             boolean isSafe = true;
             int issueLayerIndex = validator(reports.get(i));
-
             if (issueLayerIndex != -1) {
                 isSafe = false;
-
-                for (int j = 0; j < reports.get(i).size() - 1; j++) {
+                for (int j = 0; j < reports.get(i).size(); j++) {
                     ArrayList<Integer> temp = new ArrayList<>(reports.get(i));
                     temp.remove(j);
 
@@ -52,9 +50,7 @@ public class RedNosedReports {
                         break;
                     }
                 }
-
             }
-
             if (isSafe) {
                 safeReports++;
 
