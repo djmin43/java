@@ -7,16 +7,20 @@ public class Scanner1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("문자열을 입력하세요(exit: 종료):");
+        while (true) {
+            System.out.println("첫번째 숫자를 입력해주세요: ");
+            int firstInt = scanner.nextInt();
 
-        while (true){
-            String str = scanner.nextLine();
+            System.out.println("두번째 숫자를 입력해주세요:");
+            int secondInt = scanner.nextInt();
 
-            if (str.equals("exit")) {
-                System.out.print("프로그램을 종료합니다");
+            if ((firstInt + secondInt) == 0) {
+                System.out.println("두 합은 0입니다. 프로그램 종료");
                 break;
             }
-            System.out.println("입력한 문자열: " + str);
+            System.out.println("두 수의 합은? " + (firstInt + secondInt));
+
+
         }
 
     }
