@@ -13,7 +13,7 @@ public class AccountMain {
         account.withdraw(90);
 
         account.withdraw(10);
-        
+
         System.out.println("account = " + account.balance);
 
     }
